@@ -17,9 +17,4 @@ public class BulletSpawnBehaviour : MonoBehaviour
         //Spawn a bullet
         Instantiate(_bullet, transform.position, transform.rotation);
     }
-
-    private void Update()
-    {
-        Destroy(_bullet, _despawnTime);
-    }
 }
