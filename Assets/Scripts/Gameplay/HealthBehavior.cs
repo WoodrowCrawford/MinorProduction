@@ -9,6 +9,15 @@ public class HealthBehavior : MonoBehaviour
     [SerializeField]
     float health;
 
+
+
+    //This will be used when the object hits another object in the game.
+    //It will decrease the health by a certain value.
+    void takeDamage()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
