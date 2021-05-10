@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(NavMeshAgent))]
-public class BossMovementBehaviour : MonoBehaviour
+public class EnemyMovementBehaviour : MonoBehaviour
 {
     [Tooltip("The rigidbody attached to this object")]
     [SerializeField]
@@ -14,8 +15,24 @@ public class BossMovementBehaviour : MonoBehaviour
     private Transform _target;
     [Tooltip("The NavMeshAgent.")]
     private NavMeshAgent _navMeshAgent;
-    public float HorizontalSpeed = 2;
-    public float StartCos = 0;
+    [Tooltip("The force that will be applied to object to move it.")]
+    [SerializeField]
+    private float _moveForce;
+    [Tooltip("The maximum magnitude this enemy's velocity can have.")]
+    [SerializeField]
+    private float _maxVelocity;
+    
+    public Transform Target
+    {
+        get
+        {
+            return _target;
+        }
+        set 
+        {
+            _target = value;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +42,8 @@ public class BossMovementBehaviour : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
+    private void Update()
     {
         _navMeshAgent.SetDestination(_target.position);
-
-        StartCos += Time.deltaTime;
-
-        transform.position += new Vector3(Mathf.Cos(StartCos), 0, 0) * HorizontalSpeed * Time.deltaTime;
     }
 }
