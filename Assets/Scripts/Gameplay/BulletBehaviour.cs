@@ -32,11 +32,12 @@ public class BulletBehaviour : MonoBehaviour
     void Start()
     {
         _rigidbody.AddForce(transform.forward * _velocity);
+        Destroy(this, _despawnTime);
     }
 
     private void Update()
     {
-        Destroy(_rigidbody, _despawnTime);
+        _rigidbody.AddForce(transform.forward * _velocity);
     }
 
     //COMPLETE WHEN HEALTHBEHAVIOUR IS DONE

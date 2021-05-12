@@ -13,6 +13,15 @@ public class BulletSpawnBehaviour : MonoBehaviour
     [Tooltip("The bullet that will be shot.")]
     [SerializeField]
     private GameObject _bullet;
+    [Tooltip("The time before the bullet gets destroyed.")]
+    [SerializeField]
+    private float _despawnTime;
+
+    private void Start()
+    {
+
+        Destroy(_bullet, _despawnTime);
+    }
 
     //Shoots a bullet when called
     public void Shoot()
