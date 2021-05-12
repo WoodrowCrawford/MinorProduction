@@ -11,6 +11,7 @@ public class BulletBehaviour : MonoBehaviour
     [Tooltip("The damage the bullet deals once hit.")]
     [SerializeField]
     private float _damage = 1;
+    [Tooltip("The time before despawning the bullet.")]
     [SerializeField]
     private float _despawnTime;
 
@@ -31,13 +32,13 @@ public class BulletBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody.AddForce(transform.forward * _velocity);
-        Destroy(this, _despawnTime);
+        _rigidbody.AddForce(-transform.right * _velocity);
+        Destroy(this.gameObject, _despawnTime);
     }
 
     private void Update()
     {
-        _rigidbody.AddForce(transform.forward * _velocity);
+        _rigidbody.AddForce(-transform.right * _velocity * Time.deltaTime);
     }
 
     //COMPLETE WHEN HEALTHBEHAVIOUR IS DONE
