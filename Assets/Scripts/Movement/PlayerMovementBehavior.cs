@@ -19,7 +19,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Moving(Vector3 Direction)
+    public void Move(Vector3 Direction)
     {
         _velocity = speed * Direction * Time.deltaTime;
     }
@@ -28,7 +28,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     void FixedUpdate()
     {
         // The Basic Clamp to prevent players moving  too far in one direction
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5, 5), transform.position.y, Mathf.Clamp(transform.position.z, -3, 3));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3, 3), transform.position.y, Mathf.Clamp(transform.position.z, -3, 3));
+     
 
         rigidbody.MovePosition(transform.position + _velocity);
 

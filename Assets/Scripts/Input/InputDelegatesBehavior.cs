@@ -37,6 +37,8 @@ public class InputDelegatesBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _movement.Moving(_controls.Player.Movement.ReadValue<Vector2>());
+        Vector3 MoveDirection = new Vector3(_controls.Player.Movement.ReadValue<Vector2>().x, 0, _controls.Player.Movement.ReadValue<Vector2>().y);
+        _movement.Move(MoveDirection);
+
     }
 }
