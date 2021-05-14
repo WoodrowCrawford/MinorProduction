@@ -10,6 +10,13 @@ public class HealthBehavior : MonoBehaviour
     private float _health;
 
 
+    public float Health
+    {
+        get
+        {
+            return _health;
+        }
+    }
 
     //This will be used when the object hits another object in the game.
     //It will decrease the health by a certain value.
@@ -20,11 +27,7 @@ public class HealthBehavior : MonoBehaviour
         _health = _health - 1;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+    
 
     // Update is called once per frame
     void Update()
