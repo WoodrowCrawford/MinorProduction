@@ -4,26 +4,41 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    [Tooltip("A reference to the bullet.")]
-    [SerializeField]
-    private Rigidbody _bullet;
+    private Rigidbody _rigidbody;
     [Tooltip("How fast the bullet is.")]
     [SerializeField]
-    private float _velocity;
+    private float _velocity = 10;
     [Tooltip("The damage the bullet deals once hit.")]
     [SerializeField]
-    private float _damage;
+    private float _damage = 1;
+    [Tooltip("The time before despawning the bullet.")]
+    [SerializeField]
+    private float _despawnTime;
+
+    public Rigidbody Rigidbody
+    {
+        get
+        {
+            return _rigidbody;
+        }
+    }
+
+    private void Awake()
+    {
+        //Get a reference to this object's rigidbody
+        _rigidbody = GetComponent<Rigidbody>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        _bullet.AddForce(transform.forward * _velocity);
+        _rigidbody.AddForce(-transform.right * _velocity);
+        Destroy(this.gameObject, _despawnTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _rigidbody.AddForce(-transform.right * _velocity * Time.deltaTime);
     }
 
     //COMPLETE WHEN HEALTHBEHAVIOUR IS DONE
