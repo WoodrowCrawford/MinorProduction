@@ -14,6 +14,10 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     private float _score;
 
+    //The current wave the player is on
+    [SerializeField]
+    private float _wave;
+
     //What happens when the the game is over
     public static GameEvent onGameOver;
 
@@ -46,15 +50,20 @@ public class GameManagerBehavior : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    //What happens when the game quits
     public void QuitGame()
     {
         Application.Quit();
     }
 
+
     private void Start()
     {
         //Sets the score to be equal to zero when the game is started
         _score = 0;
+        
+        //Sets the current wave to be 1
+        _wave = 1;
     }
 
     // Update is called once per frame
