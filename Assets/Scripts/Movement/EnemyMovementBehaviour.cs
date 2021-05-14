@@ -22,6 +22,7 @@ public class EnemyMovementBehaviour : MonoBehaviour
     [SerializeField]
     private float _maxVelocity;
     
+    //The target is set here.
     public Transform Target
     {
         get
@@ -44,6 +45,7 @@ public class EnemyMovementBehaviour : MonoBehaviour
 
     private void Update()
     {
+        //Sets the targets position to be the enemies destination.
         _navMeshAgent.SetDestination(_target.position);
     }
 }

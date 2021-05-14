@@ -19,7 +19,7 @@ public class BulletSpawnBehaviour : MonoBehaviour
 
     private void Start()
     {
-
+        //Destroys the bullets after the set despawn time
         Destroy(_bullet, _despawnTime);
     }
 

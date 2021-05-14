@@ -15,6 +15,7 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField]
     private float _despawnTime;
 
+    //grabs the reference of the rigidbody and sets it in code
     public Rigidbody Rigidbody
     {
         get
@@ -32,12 +33,15 @@ public class BulletBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Adds an initial force on start to get the bullet moving
         _rigidbody.AddForce(-transform.right * _velocity);
+        //Destroys the bullet after a set despawn time
         Destroy(this.gameObject, _despawnTime);
     }
 
     private void Update()
     {
+        //Adds a constant force to the rigidbody of the bullet every frame.
         _rigidbody.AddForce(-transform.right * _velocity * Time.deltaTime);
     }
 
