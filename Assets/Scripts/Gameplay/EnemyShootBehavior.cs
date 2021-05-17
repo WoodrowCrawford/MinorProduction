@@ -26,6 +26,8 @@ public class EnemyShootBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // When the timer is 0 the enemy shoots 
+        // else the timer is subtracted by th etime passed between frames
         if(shootTimer <= 0)
         {
             Instantiate(_EnemyBullet, _EnemyGun.transform.position, transform.rotation);
