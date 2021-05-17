@@ -19,6 +19,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
+    // A function to move using delegate events 
     public void Move(Vector3 Direction)
     {
         _velocity = speed * Direction * Time.deltaTime;
