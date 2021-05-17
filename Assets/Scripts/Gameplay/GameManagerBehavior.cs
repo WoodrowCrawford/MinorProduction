@@ -8,7 +8,7 @@ public delegate void GameEvent();
 public class GameManagerBehavior : MonoBehaviour
 {
     [SerializeField]
-    private static bool _gameover = false;
+    private static bool _gameOver = false;
 
     //The player's current score
     [SerializeField]
@@ -26,7 +26,8 @@ public class GameManagerBehavior : MonoBehaviour
     private HealthBehavior _playerHealth;
 
 
-    //Gets a reference of the enemy health for the game manager
+    //Gets a reference of the enemy health for the game manager.
+    //NOTE: IF THIS DOES NOT HAVE A PURPOSE, CAN BE REMOVED.
     [SerializeField]
     private HealthBehavior _enemyHealth;
 
@@ -39,7 +40,7 @@ public class GameManagerBehavior : MonoBehaviour
     {
         get
         {
-            return _gameover;
+            return _gameOver;
         }
     }
 
@@ -69,7 +70,10 @@ public class GameManagerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //If the player health is less than or greater than 0, then game over will be set to false
-        _gameover = _playerHealth.Health <= 0;
+        //If the player health is less than or greater than 0, then the game over screen will appear
+        //NOTE: AS OF THIS EDIT, THE GAME OVER SCREEN DOES NOT EXIST YET.
+        _gameOver = _playerHealth.Health <= 0;
+
+        _gameOverScreen.SetActive(_gameOver);
     }
 }
