@@ -31,6 +31,43 @@ public class EnemyMovementBehaviour : MonoBehaviour
     [SerializeField]
     private Transform _zMin;
 
+
+    public Transform minX
+    {
+        get
+        {
+            return _minX;
+        }
+        set
+        {
+            _minX = value;
+        }
+    }
+
+    public Transform maxX
+    {
+        get
+        {
+            return _maxX;
+        }
+        set
+        {
+            _maxX = value;
+        }
+    }
+
+    public Transform zMin
+    {
+        get
+        {
+            return _zMin;
+        }
+        set
+        {
+            _zMin = value;
+        }
+    }
+
     private void Start()
     {
         //Get a reference to the attached rigidbody
@@ -41,6 +78,9 @@ public class EnemyMovementBehaviour : MonoBehaviour
         Vector3 tempPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
         _navMeshAgent.SetDestination(tempPos);
     }
+
+    //USE A FIXED UPDATE WHEN UTILIZING RIGIDBODY AND REMOVE THE NAVMESH MOVEMENT (IT IS UNNECCESSARY)
+    //MAKING ENEMIES A TRIGGER CAN HELP!!
 
     void Update()
     {
