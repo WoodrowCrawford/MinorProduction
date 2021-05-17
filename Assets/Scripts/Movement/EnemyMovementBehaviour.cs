@@ -44,12 +44,14 @@ public class EnemyMovementBehaviour : MonoBehaviour
 
     void Update()
     {
+        //If the current x is greater than, or equal to, the max x set in unity, then the min X is the new destination and we go forward on the z by 2.
         if (_currentPosition.transform.position.x >= _maxX.transform.position.x)
         {
             Vector3 leftPos = new Vector3(_minX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
             _navMeshAgent.SetDestination(leftPos);
         }
 
+        //If the current x is less than, or equal to, the min x set in unity, then the max X is the new destination and we go forward on the z by 2.
         if (_currentPosition.transform.position.x <= _minX.transform.position.x)
         {
             Vector3 rightPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
