@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 828006420}
+  _playerShootcooldown: 5
 --- !u!114 &2086142102
 MonoBehaviour:
   m_ObjectHideFlags: 0
