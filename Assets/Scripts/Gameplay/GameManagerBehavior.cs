@@ -36,6 +36,7 @@ public class GameManagerBehavior : MonoBehaviour
     private GameObject _gameOverScreen;
 
    
+    //Gets a reference of the gameover variable
     public static bool GameOver
     {
         get
@@ -44,6 +45,22 @@ public class GameManagerBehavior : MonoBehaviour
         }
     }
 
+
+    public float Score
+    {
+        get
+        {
+            return _score;
+        }
+    }
+
+    public float Wave
+    {
+        get
+        {
+            return _wave;
+        }
+    }
 
     //What happens when the game restarts 
     public void RestartGame()
