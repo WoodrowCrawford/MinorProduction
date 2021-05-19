@@ -1,17 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMovementBehaviour : MonoBehaviour
 {
     [Tooltip("The rigidbody attached to this object")]
     [SerializeField]
     private Rigidbody _rigidbody;
-    [Tooltip("The NavMeshAgent.")]
-    private NavMeshAgent _navMeshAgent;
     [Tooltip("The force that will be applied to object to move it.")]
     [SerializeField]
     private float _moveForce;
@@ -72,11 +68,11 @@ public class EnemyMovementBehaviour : MonoBehaviour
     {
         //Get a reference to the attached rigidbody
         _rigidbody = GetComponent<Rigidbody>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
 
         //sets the destination to be the max X position
         Vector3 tempPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
-        _navMeshAgent.SetDestination(tempPos);
+        //transform.position = Vector3.MoveTowards(_currentPosition.position, tempPos, _moveForce);
+        _rigidbody.MovePosition(tempPos);
     }
 
     //USE A FIXED UPDATE WHEN UTILIZING RIGIDBODY AND REMOVE THE NAVMESH MOVEMENT (IT IS UNNECCESSARY)
@@ -84,18 +80,22 @@ public class EnemyMovementBehaviour : MonoBehaviour
 
     void Update()
     {
+        float moveForce = _moveForce * Time.deltaTime;
+
         //If the current x is greater than, or equal to, the max x set in unity, then the min X is the new destination and we go forward on the z by 2.
         if (_currentPosition.transform.position.x >= _maxX.transform.position.x)
         {
-            Vector3 leftPos = new Vector3(_minX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
-            _navMeshAgent.SetDestination(leftPos);
+            Vector3 leftPos = new Vector3(_minX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
+            //transform.position = Vector3.MoveTowards(_currentPosition.position, leftPos, moveForce);
+            _rigidbody.MovePosition(leftPos);
         }
 
         //If the current x is less than, or equal to, the min x set in unity, then the max X is the new destination and we go forward on the z by 2.
         if (_currentPosition.transform.position.x <= _minX.transform.position.x)
         {
-            Vector3 rightPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
-            _navMeshAgent.SetDestination(rightPos);
+            Vector3 rightPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
+            //transform.position = Vector3.MoveTowards(_currentPosition.position, rightPos, moveForce);
+            _rigidbody.MovePosition(rightPos);
         }
     }
 }
