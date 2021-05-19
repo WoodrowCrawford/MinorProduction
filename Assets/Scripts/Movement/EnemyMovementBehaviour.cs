@@ -86,16 +86,20 @@ public class EnemyMovementBehaviour : MonoBehaviour
         if (_currentPosition.transform.position.x >= _maxX.transform.position.x)
         {
             Vector3 leftPos = new Vector3(_minX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
+            Vector3 lowerPos = new Vector3(_currentPosition.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
             //transform.position = Vector3.MoveTowards(_currentPosition.position, leftPos, moveForce);
             _rigidbody.MovePosition(leftPos);
+            _rigidbody.MovePosition(lowerPos);
         }
 
         //If the current x is less than, or equal to, the min x set in unity, then the max X is the new destination and we go forward on the z by 2.
         if (_currentPosition.transform.position.x <= _minX.transform.position.x)
         {
             Vector3 rightPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
+            Vector3 lowerPos = new Vector3(_currentPosition.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
             //transform.position = Vector3.MoveTowards(_currentPosition.position, rightPos, moveForce);
             _rigidbody.MovePosition(rightPos);
+            _rigidbody.MovePosition(lowerPos);
         }
     }
 }
