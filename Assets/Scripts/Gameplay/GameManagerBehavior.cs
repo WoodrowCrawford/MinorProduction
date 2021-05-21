@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public delegate void GameEvent();
 public class GameManagerBehavior : MonoBehaviour
 {
+   
     [SerializeField]
     private static bool _gameOver = false;
 
     //The player's current score
     [SerializeField]
-    private float _score;
+    private int _score;
 
     //The current wave the player is on
     [SerializeField]
@@ -43,14 +44,20 @@ public class GameManagerBehavior : MonoBehaviour
         {
             return _gameOver;
         }
+        
+        
     }
 
 
-    public float Score
+    public int Score
     {
         get
         {
             return _score;
+        }
+        set
+        {
+            _score = value;
         }
     }
 
@@ -60,7 +67,13 @@ public class GameManagerBehavior : MonoBehaviour
         {
             return _wave;
         }
+        set
+        {
+            _wave = value;
+        }
     }
+    
+    
 
     //What happens when the game restarts 
     public void RestartGame()
@@ -92,5 +105,8 @@ public class GameManagerBehavior : MonoBehaviour
         _gameOver = _playerHealth.Health <= 0;
 
         _gameOverScreen.SetActive(_gameOver);
+
+       
+        
     }
 }
