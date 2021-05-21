@@ -32,13 +32,13 @@ public class BulletBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody.AddForce(-transform.right * _velocity);
+        _rigidbody.AddForce(transform.forward * _velocity);
         Destroy(this.gameObject, _despawnTime);
     }
 
     private void Update()
     {
-        _rigidbody.AddForce(-transform.right * _velocity * Time.deltaTime);
+        _rigidbody.AddForce(transform.forward * _velocity * Time.deltaTime);
     }
 
     //COMPLETE WHEN HEALTHBEHAVIOUR IS DONE

@@ -19,6 +19,12 @@ public class InputDelegatesBehavior : MonoBehaviour
     // A variable to hold the time the cooldown is set to
     private float _startingTimer;
 
+    // A bool to check if the power up is being used
+    [SerializeField]
+    private bool _powerUpActive;
+
+    private float _backUpTimer;
+
     private PlayerMovementBehavior _movement;
 
 
@@ -41,6 +47,7 @@ public class InputDelegatesBehavior : MonoBehaviour
     void Start()
     {
         _startingTimer = _playerShootcooldown;
+        _backUpTimer = _startingTimer;
         _movement = GetComponent<PlayerMovementBehavior>();
         _controls.Player.Shoot.started += context => _bulletSpawner.Shoot();
     }
@@ -61,6 +68,11 @@ public class InputDelegatesBehavior : MonoBehaviour
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
                 _playerShootcooldown = _startingTimer;
+
+                if (_powerUpActive)
+                {
+                    _playerShootcooldown = 3;
+                }
             }
        }
 
