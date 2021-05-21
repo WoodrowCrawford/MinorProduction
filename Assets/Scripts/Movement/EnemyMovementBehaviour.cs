@@ -71,14 +71,13 @@ public class EnemyMovementBehaviour : MonoBehaviour
 
         //sets the destination to be the max X position
         Vector3 tempPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
-        //transform.position = Vector3.MoveTowards(_currentPosition.position, tempPos, _moveForce);
-        _rigidbody.MovePosition(tempPos);
+        transform.position = Vector3.MoveTowards(_currentPosition.position, tempPos, _moveForce);
     }
 
     //USE A FIXED UPDATE WHEN UTILIZING RIGIDBODY AND REMOVE THE NAVMESH MOVEMENT (IT IS UNNECCESSARY)
     //MAKING ENEMIES A TRIGGER CAN HELP!!
 
-    void Update()
+    void FixedUpdate()
     {
         float moveForce = _moveForce * Time.deltaTime;
 
@@ -87,9 +86,8 @@ public class EnemyMovementBehaviour : MonoBehaviour
         {
             Vector3 leftPos = new Vector3(_minX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
             Vector3 lowerPos = new Vector3(_currentPosition.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
-            //transform.position = Vector3.MoveTowards(_currentPosition.position, leftPos, moveForce);
-            _rigidbody.MovePosition(leftPos);
-            _rigidbody.MovePosition(lowerPos);
+            transform.position = Vector3.MoveTowards(_currentPosition.position, lowerPos, moveForce);
+            transform.position = Vector3.MoveTowards(_currentPosition.position, leftPos, moveForce);
         }
 
         //If the current x is less than, or equal to, the min x set in unity, then the max X is the new destination and we go forward on the z by 2.
@@ -97,9 +95,8 @@ public class EnemyMovementBehaviour : MonoBehaviour
         {
             Vector3 rightPos = new Vector3(_maxX.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z);
             Vector3 lowerPos = new Vector3(_currentPosition.transform.position.x, _currentPosition.transform.position.y, _currentPosition.transform.position.z - 2);
-            //transform.position = Vector3.MoveTowards(_currentPosition.position, rightPos, moveForce);
-            _rigidbody.MovePosition(rightPos);
-            _rigidbody.MovePosition(lowerPos);
+            transform.position = Vector3.MoveTowards(_currentPosition.position, lowerPos, moveForce);
+            transform.position = Vector3.MoveTowards(_currentPosition.position, rightPos, moveForce);
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9127714212832121344}
   - component: {fileID: 3851382228058308954}
   - component: {fileID: 154543812762806801}
-  - component: {fileID: 2988004021165724750}
+  - component: {fileID: 1507394682235255400}
   m_Layer: 0
   m_Name: TempEnemy
   m_TagString: Untagged
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2988004021165724750
+--- !u!114 &1507394682235255400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd657fdb27c42ed45a4835acfa6ae7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 154543812762806801}
-  _moveForce: 7.54
-  _maxVelocity: 10
-  _currentPosition: {fileID: 4474085171776087917}
+  _rigidbody: {fileID: 0}
+  _moveForce: 0
+  _maxVelocity: 0
+  _currentPosition: {fileID: 0}
   _minX: {fileID: 0}
   _maxX: {fileID: 0}
   _zMin: {fileID: 0}
