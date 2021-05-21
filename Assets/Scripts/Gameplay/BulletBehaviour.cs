@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
+
+   
+
     private Rigidbody _rigidbody;
     [Tooltip("How fast the bullet is.")]
     [SerializeField]
@@ -46,6 +49,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         //I want to get a refference to the health behaviour then put that in a health behaviour
 
+       
         //I then need to call takeDamage on the health if the bullet collides with something that 
         //has health
     }
