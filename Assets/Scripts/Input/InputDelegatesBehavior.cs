@@ -27,7 +27,6 @@ public class InputDelegatesBehavior : MonoBehaviour
 
     private PlayerMovementBehavior _movement;
 
-
     public void Awake()
     {
         _controls = new PlayerControls();
@@ -59,6 +58,7 @@ public class InputDelegatesBehavior : MonoBehaviour
         Vector3 MoveDirection = new Vector3(_controls.Player.Movement.ReadValue<Vector2>().x, 0, _controls.Player.Movement.ReadValue<Vector2>().y);
         _movement.Move(MoveDirection);
 
+        
         // If the cooldown is 0 then the player is allowed to shoot
        if(_playerShootcooldown <= 0)
        {
