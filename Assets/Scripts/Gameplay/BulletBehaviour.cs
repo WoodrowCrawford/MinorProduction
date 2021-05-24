@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
-    public float StartSin = 0;
+    private Rigidbody _rigidbody; 
     [Tooltip("How fast the bullet is.")]
     [SerializeField]
     private float _velocity = 10;
@@ -15,9 +14,6 @@ public class BulletBehaviour : MonoBehaviour
     [Tooltip("The time before despawning the bullet.")]
     [SerializeField]
     private float _despawnTime;
-    [Tooltip("Makes the bullet shoot in a wave pattern.")]
-    [SerializeField]
-    private bool _wave;
 
     //grabs the reference of the rigidbody and sets it in code
     public Rigidbody Rigidbody
@@ -45,23 +41,18 @@ public class BulletBehaviour : MonoBehaviour
 
     private void Update()
     {
-        //Adds a constant force to the rigidbody of the bullet every frame.
+        //Adds a constant force to the rigidbody of the bullet every frame
         _rigidbody.AddForce(-transform.right * _velocity * Time.deltaTime);
-
-        //adds the deltaTime to the StartCos to make the speed match gameplay
-        StartSin += Time.deltaTime;
-
-        if(_wave == true)
-        //Makes the "bullets" move up and down when shot if "wave" is true
-        transform.position += new Vector3(Mathf.Sin(StartSin), 0, 0) * _velocity * Time.deltaTime;
     }
 
     //COMPLETE WHEN HEALTHBEHAVIOUR IS DONE
     private void OnTriggerEnter(Collider other)
     {
-        //I want to get a refference to the health behaviour then put that in a health behaviour
+        //Create a HealthBehaviour variable and set it equal to the health of what the bullet collides with
+        /*HealthBehaviour health = other.GetComponent<HealthBehaviour>();
 
-        //I then need to call takeDamage on the health if the bullet collides with something that 
-        //has health
+        //If the bullet collides with something that has health, call TakeDamage
+        if (health)
+            health.TakeDamage(Damage);*/
     }
 }
