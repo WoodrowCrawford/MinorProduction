@@ -11,24 +11,29 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     private static bool _gameOver = false;
 
+    //What happens when the the game is over
+    public static GameEvent onGameOver;
+
+    //The game over screen
+    [SerializeField]
+    private GameObject _gameOverScreen;
+
+
+    //Gets a reference of the player health for the game manager
+    [SerializeField]
+    private HealthBehavior _playerHealth;
+
+
     //The player's current score
     //Uses the score behavior as a reference
     [SerializeField]
     ScoreBehavior _score;
 
-    
 
     //The current wave the player is in
     //Uses the wave behavior as a reference
     [SerializeField]
     WaveBehavior _wave;
-
-    //What happens when the the game is over
-    public static GameEvent onGameOver;
-
-    //Gets a reference of the player health for the game manager
-    [SerializeField]
-    private HealthBehavior _playerHealth;
 
 
     //Gets a reference of the enemy health for the game manager.
@@ -36,14 +41,7 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     private HealthBehavior _enemyHealth;
 
-    //The game over screen
-    [SerializeField]
-    private GameObject _gameOverScreen;
 
-   
-
-
-    
     //Gets a reference of the gameover variable
     public static bool GameOver
     {

@@ -51,6 +51,11 @@ public class HealthBehavior : MonoBehaviour
         {
             //Destroys the current object from the scene.
             Destroy(gameObject);
+            ScoreBehavior score = GetComponent<ScoreBehavior>();
+
+            score.AddScore(1);
+
+            
         }
 
     }
