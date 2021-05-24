@@ -15,13 +15,12 @@ public class InputDelegatesBehavior : MonoBehaviour
     [Tooltip("The time it takes for the player to shoot again")]
     [SerializeField]
     private float _playerShootcooldown;
+    
+    [SerializeField]
+    private PowerUpScriptableObject RapidFire;
 
     // A variable to hold the time the cooldown is set to
     private float _startingTimer;
-
-    // A bool to check if the power up is being used
-    [SerializeField]
-    private bool _powerUpActive;
 
     private float _backUpTimer;
 
@@ -65,13 +64,13 @@ public class InputDelegatesBehavior : MonoBehaviour
             _controls.Player.Shoot.Enable();
 
             // Waits for the player to shoot before restarting the timer
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 _playerShootcooldown = _startingTimer;
 
-                if (_powerUpActive)
+                if (RapidFire.isActive)
                 {
-                    _playerShootcooldown = 3;
+                    _playerShootcooldown = 1;
                 }
             }
        }

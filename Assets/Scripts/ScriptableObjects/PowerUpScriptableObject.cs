@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="PowerUp",menuName = "Power Ups")]
 public class PowerUpScriptableObject : ScriptableObject
 {
-    public float RapidFireTimeChange;
+    public float PowerUpTimer;
     public bool isActive;
 }

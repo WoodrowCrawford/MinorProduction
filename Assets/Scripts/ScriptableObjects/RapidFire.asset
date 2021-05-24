@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28d60d0c3dbcb045b37d01b6817a965, type: 3}
   m_Name: RapidFire
   m_EditorClassIdentifier: 
-  RapidFireTimeChange: 0
-  isActive: 0
+  PowerUpTimer: 5
+  isActive: 1
