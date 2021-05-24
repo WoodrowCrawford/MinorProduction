@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class WaveBehavior : MonoBehaviour
 {
+    [SerializeField]
     private int _wave;
+
+    [SerializeField]
     public Text waveText;
 
 
-
+    //Makes a reference of the wave value
     public int Wave
     {
         get
@@ -22,11 +25,6 @@ public class WaveBehavior : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     //Sets the wave value to equal 1
     public void RestartWave()

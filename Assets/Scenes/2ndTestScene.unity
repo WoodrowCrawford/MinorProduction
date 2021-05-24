@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 291b17ee0374136408614330e9822610, type: 2}
 --- !u!1 &210799871
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,8 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be48bdf3860bd604095b6aa8f8798f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 0
-  _wave: 0
+  _score: {fileID: 0}
+  _wave: {fileID: 0}
   _playerHealth: {fileID: 1238934854}
   _enemyHealth: {fileID: 1995846696}
   _gameOverScreen: {fileID: 0}
@@ -469,9 +469,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 6
+  m_MaxValue: 3
   m_WholeNumbers: 1
-  m_Value: 6
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77428ae6d03be7e4d828b00b7d4c64b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!54 &1238934849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f8c3f3d2435674e910b0a175716d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 2
 --- !u!1 &1280854242
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +858,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1280854243
 BoxCollider:
@@ -969,7 +969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 79.94999, y: -98}
+  m_AnchoredPosition: {x: 79.94999, y: -29.9}
   m_SizeDelta: {x: 156.61, y: 59.300003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485555636
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 0
 --- !u!222 &1485555637
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1021,10 +1021,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485555634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a757fd2d67eb16488a0eb26f2bec1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ae38864f0e5c00499caebf203116ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManagerBehavior: {fileID: 0}
+  _score: 0
+  scoreText: {fileID: 1485555636}
 --- !u!1 &1520784845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,10 +1669,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050531281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a757fd2d67eb16488a0eb26f2bec1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 74d7bcf0b5241eb4dafc4876cbfc5c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManagerBehavior: {fileID: 0}
+  _wave: 0
+  waveText: {fileID: 2050531284}
 --- !u!114 &2050531284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,7 +1705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 0
 --- !u!222 &2050531285
 CanvasRenderer:
   m_ObjectHideFlags: 0

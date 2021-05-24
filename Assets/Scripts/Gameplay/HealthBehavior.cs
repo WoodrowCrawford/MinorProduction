@@ -35,7 +35,13 @@ public class HealthBehavior : MonoBehaviour
             _health = 0;
     }
 
-    
+    //A function that can heal the player by a given value. Can be used for a powerup.
+    public void Heal(int value)
+    {
+        Health += value;
+        if (Health <= 3)
+            Health = 3;
+    }
 
     // Update is called once per frame
     void Update()

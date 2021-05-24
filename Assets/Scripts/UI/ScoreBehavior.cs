@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class ScoreBehavior : MonoBehaviour
 {
+    [SerializeField]
     private int _score;
+
+    [SerializeField]
     public Text scoreText;
 
 
-
+    //Makes a reference of the score value
     public int Score
     {
         get
@@ -22,11 +25,6 @@ public class ScoreBehavior : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     //Sets the score value to equal 0
     public void RestartScore()
@@ -40,9 +38,15 @@ public class ScoreBehavior : MonoBehaviour
         scoreText.text = Score.ToString();
     }
 
+    //A score multiplier that can be used for a powerup.
+    public void ScoreMultiplier(int value)
+    {
+        Score *= value;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        //For this, I want the score counter to increase when the enemy has been defeated
     }
 }
