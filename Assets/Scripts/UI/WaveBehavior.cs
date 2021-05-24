@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class WaveBehavior : MonoBehaviour
 {
+    //The current wave that the player is on
     [SerializeField]
-    private int _wave;
+    public int wave;
 
     [SerializeField]
     public Text waveText;
@@ -17,11 +18,11 @@ public class WaveBehavior : MonoBehaviour
     {
         get
         {
-            return _wave;
+            return wave;
         }
         set
         {
-            _wave = value;
+            wave = value;
         }
     }
 
@@ -38,10 +39,16 @@ public class WaveBehavior : MonoBehaviour
         waveText.text = Wave.ToString();
     }
 
+    private void Start()
+    {
+        waveText = GetComponent<Text>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        //Shows "Wave: #" on the screen
+        waveText.text = "Wave: " + wave;
     }
 
 }

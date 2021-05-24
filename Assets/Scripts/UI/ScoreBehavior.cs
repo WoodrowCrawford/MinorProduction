@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreBehavior : MonoBehaviour
 {
     [SerializeField]
-    private int _score;
+    public int scoreValue = 0;
 
     [SerializeField]
     public Text scoreText;
@@ -17,20 +17,20 @@ public class ScoreBehavior : MonoBehaviour
     {
         get
         {
-            return _score;
+            return scoreValue;
         }
         set
         {
-            _score = value;
+            scoreValue = value;
         }
     }
-
 
     //Sets the score value to equal 0
     public void RestartScore()
     {
         Score = 0;
     }
+
     //Adds points to the score with a given value
     public void AddScore(int value)
     {
@@ -44,9 +44,19 @@ public class ScoreBehavior : MonoBehaviour
         Score *= value;
     }
 
+    private void Start()
+    {
+        scoreText = GetComponent<Text>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //For this, I want the score counter to increase when the enemy has been defeated
+        //Shows "Score: #" on the screen
+        scoreText.text = "Score: " + scoreValue;
     }
+
+    
+
+   
 }

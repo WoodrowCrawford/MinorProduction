@@ -15,7 +15,8 @@ public class GameManagerBehavior : MonoBehaviour
     //Uses the score behavior as a reference
     [SerializeField]
     ScoreBehavior _score;
-   
+
+    
 
     //The current wave the player is in
     //Uses the wave behavior as a reference
@@ -110,7 +111,7 @@ public class GameManagerBehavior : MonoBehaviour
         _gameOver = _playerHealth.Health <= 0;
 
         _gameOverScreen.SetActive(_gameOver);
-
+        
        
         
     }
