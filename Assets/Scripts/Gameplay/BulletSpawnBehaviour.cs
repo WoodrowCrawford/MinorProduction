@@ -17,12 +17,6 @@ public class BulletSpawnBehaviour : MonoBehaviour
     [SerializeField]
     private float _despawnTime;
 
-    private void Start()
-    {
-        //Destroys the bullets after the set despawn time
-        Destroy(_bullet, _despawnTime);
-    }
-
     //Shoots a bullet when called
     public void Shoot()
     {

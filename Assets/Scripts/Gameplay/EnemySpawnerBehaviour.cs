@@ -36,12 +36,6 @@ public class EnemySpawnerBehaviour : MonoBehaviour
         {
             //Spawns an enemy
             GameObject spawnEnemy = Instantiate(_enemy, transform.position, new Quaternion());
-            //Sets the maximum x that the enemy can go
-            spawnEnemy.GetComponent<EnemyMovementBehaviour>().maxX = _maxX;
-            //Sets the minimum x that the enemy can go
-            spawnEnemy.GetComponent<EnemyMovementBehaviour>().minX = _minX;
-            //Sets the minimum z for the enemy to go
-            spawnEnemy.GetComponent<EnemyMovementBehaviour>().zMin = _zMin;
             //Prevents enemies from spawning until the timer is up
             yield return new WaitForSeconds(_spawnTimer);
         }
