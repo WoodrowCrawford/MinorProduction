@@ -47,7 +47,7 @@ public class InputDelegatesBehavior : MonoBehaviour
         _startingTimer = _playerShootcooldown;
         _backUpTimer = _startingTimer;
         _movement = GetComponent<PlayerMovementBehavior>();
-        _controls.Player.Shoot.started += context => _bulletSpawner.Shoot();
+        _controls.Player.Shoot.performed += context => _bulletSpawner.Shoot();
     }
 
     // Update is called once per frame
@@ -57,20 +57,32 @@ public class InputDelegatesBehavior : MonoBehaviour
         Vector3 MoveDirection = new Vector3(_controls.Player.Movement.ReadValue<Vector2>().x, 0, _controls.Player.Movement.ReadValue<Vector2>().y);
         _movement.Move(MoveDirection);
 
-        
         // If the cooldown is 0 then the player is allowed to shoot
        if(_playerShootcooldown <= 0)
        {
             _controls.Player.Shoot.Enable();
 
             // Waits for the player to shoot before restarting the timer
-            if (Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame || Gamepad.current.buttonSouth.wasPressedThisFrame)
             {
                 _playerShootcooldown = _startingTimer;
 
+                // This block of code is ran when a power up is active and collected
                 if (RapidFire.isActive)
                 {
-                    _playerShootcooldown = 1;
+                    _playerShootcooldown = 0;
+
+                    // If the timer is equal to or less than 0 the rapid fire is turned off 
+                    // the cooldown for the player shooting is reset 
+                    // as well as the rapid fire time remaining.
+                    if(RapidFire.PowerUpTimer <= 0)
+                    {
+                        RapidFire.isActive = false;
+                        _playerShootcooldown = _startingTimer;
+                        RapidFire.PowerUpTimer = RapidFire.BackupTimer;
+                    }
+
+                    RapidFire.PowerUpTimer -= Time.deltaTime;
                 }
             }
        }

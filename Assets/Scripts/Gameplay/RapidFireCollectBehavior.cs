@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RapidFireCollectBehavior : MonoBehaviour
 {
+    [Tooltip("The power up that is used when picked up!")]
     [SerializeField]
     private PowerUpScriptableObject RapidFirePowerUp;
 
