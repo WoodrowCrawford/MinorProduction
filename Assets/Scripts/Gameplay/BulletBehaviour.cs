@@ -34,7 +34,7 @@ public class BulletBehaviour : MonoBehaviour
     void Start()
     {
         _rigidbody.AddForce(transform.forward * _velocity);
-        Destroy(this.gameObject, _despawnTime);
+        Destroy(gameObject, _despawnTime);
     }
 
     private void Update()
