@@ -25,11 +25,14 @@ public class HealthBehavior : MonoBehaviour
     //This will be used when the object hits another object in the game.
     //It will decrease the health by a certain value.
     //The values can be changed.
-   public void TakeDamage(object other)
+   public void TakeDamage(float damage)
     {
         //makes the new health value equal to the preivious health minus 1 (or any given number).
 
-        _health -= 1;
+        _health -= damage;
+
+        if (_health <= 0)
+            _health = 0;
     }
 
     

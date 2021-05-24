@@ -12,12 +12,15 @@ public class GameManagerBehavior : MonoBehaviour
     private static bool _gameOver = false;
 
     //The player's current score
+    //Uses the score behavior as a reference
     [SerializeField]
-    private int _score;
+    ScoreBehavior _score;
+   
 
-    //The current wave the player is on
+    //The current wave the player is in
+    //Uses the wave behavior as a reference
     [SerializeField]
-    private float _wave;
+    WaveBehavior _wave;
 
     //What happens when the the game is over
     public static GameEvent onGameOver;
@@ -37,6 +40,9 @@ public class GameManagerBehavior : MonoBehaviour
     private GameObject _gameOverScreen;
 
    
+
+
+    
     //Gets a reference of the gameover variable
     public static bool GameOver
     {
@@ -45,23 +51,10 @@ public class GameManagerBehavior : MonoBehaviour
             return _gameOver;
         }
         
-        
     }
 
 
-    public int Score
-    {
-        get
-        {
-            return _score;
-        }
-        set
-        {
-            _score = value;
-        }
-    }
-
-    public float Wave
+    public WaveBehavior Wave
     {
         get
         {
@@ -73,6 +66,18 @@ public class GameManagerBehavior : MonoBehaviour
         }
     }
     
+
+    public ScoreBehavior Score
+    {
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score = value;
+        }
+    }
     
 
     //What happens when the game restarts 
@@ -91,10 +96,10 @@ public class GameManagerBehavior : MonoBehaviour
     private void Start()
     {
         //Sets the score to be equal to zero when the game is started
-        _score = 0;
-        
+        Score.RestartScore();
+
         //Sets the current wave to be 1
-        _wave = 1;
+        Wave.RestartWave();
     }
 
     // Update is called once per frame
