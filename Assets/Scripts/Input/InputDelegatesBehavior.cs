@@ -47,7 +47,7 @@ public class InputDelegatesBehavior : MonoBehaviour
         _startingTimer = _playerShootcooldown;
         _backUpTimer = _startingTimer;
         _movement = GetComponent<PlayerMovementBehavior>();
-        _controls.Player.Shoot.performed += context => _bulletSpawner.Shoot();
+        //_controls.Player.Shoot.performed += context => _bulletSpawner.Shoot();
     }
 
     // Update is called once per frame
@@ -63,8 +63,9 @@ public class InputDelegatesBehavior : MonoBehaviour
             _controls.Player.Shoot.Enable();
 
             // Waits for the player to shoot before restarting the timer
-            if (Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame || Gamepad.current.buttonSouth.wasPressedThisFrame)
+            if (Mouse.current.leftButton.isPressed || Keyboard.current.spaceKey.isPressed)
             {
+                _bulletSpawner.Shoot();
                 _playerShootcooldown = _startingTimer;
 
                 // This block of code is ran when a power up is active and collected
