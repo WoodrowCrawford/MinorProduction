@@ -82,7 +82,7 @@ public class GameManagerBehavior : MonoBehaviour
     //What happens when the game restarts 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     //What happens when the game quits
@@ -96,6 +96,7 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //Sets the score to be equal to zero when the game is started
         Score.RestartScore();
+        _playerHealth.Health = 3;
 
         //Sets the current wave to be 1
         Wave.RestartWave();
