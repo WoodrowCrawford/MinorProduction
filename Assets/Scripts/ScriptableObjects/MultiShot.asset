@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d28d60d0c3dbcb045b37d01b6817a965, type: 3}
-  m_Name: RapidFire
+  m_Name: MultiShot
   m_EditorClassIdentifier: 
-  BackupTimer: 1.04
-  PowerUpTimer: 1.02
+  BackupTimer: 1
+  PowerUpTimer: 1
   isActive: 0

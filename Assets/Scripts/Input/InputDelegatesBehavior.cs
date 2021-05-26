@@ -8,9 +8,17 @@ public class InputDelegatesBehavior : MonoBehaviour
     // The controls made a variable for use
     private PlayerControls _controls;
 
-    [Tooltip("The objecy and spawning behavior that is being used to fire")]
+    [Tooltip("The object and spawning behavior that is being used to fire")]
     [SerializeField]
-    private BulletSpawnBehaviour _bulletSpawner;
+    private BulletSpawnBehaviour _barrel1;
+
+    [Tooltip("The second Barrel of the gun")]
+    [SerializeField]
+    private BulletSpawnBehaviour _barrel2;
+
+    [Tooltip("The third Barrel of the gun")]
+    [SerializeField]
+    private BulletSpawnBehaviour _barrel3;
 
     [Tooltip("The time it takes for the player to shoot again")]
     [SerializeField]
@@ -18,6 +26,9 @@ public class InputDelegatesBehavior : MonoBehaviour
     
     [SerializeField]
     private PowerUpScriptableObject RapidFire;
+
+    [SerializeField]
+    private PowerUpScriptableObject MultiShot;
 
     // A variable to hold the time the cooldown is set to
     private float _startingTimer;
@@ -65,8 +76,23 @@ public class InputDelegatesBehavior : MonoBehaviour
             // Waits for the player to shoot before restarting the timer
             if (Mouse.current.leftButton.isPressed || Keyboard.current.spaceKey.isPressed)
             {
-                _bulletSpawner.Shoot();
+                _barrel1.Shoot();
                 _playerShootcooldown = _startingTimer;
+
+                if (MultiShot.isActive)
+                {
+                    _barrel2.Shoot();
+                    _barrel3.Shoot();
+
+                    if (MultiShot.PowerUpTimer <= 0)
+                    {
+                        MultiShot.isActive = false;
+                        MultiShot.PowerUpTimer = MultiShot.BackupTimer;
+                    }
+                        
+                    else
+                        MultiShot.PowerUpTimer -= Time.deltaTime;
+                }
 
                 // This block of code is ran when a power up is active and collected
                 if (RapidFire.isActive)
