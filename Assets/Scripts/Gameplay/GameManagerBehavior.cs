@@ -14,6 +14,7 @@ public class GameManagerBehavior : MonoBehaviour
     //What happens when the the game is over
     public static GameEvent onGameOver;
 
+
     //The game over screen
     [SerializeField]
     private GameObject _gameOverScreen;
@@ -79,6 +80,7 @@ public class GameManagerBehavior : MonoBehaviour
     }
     
 
+
     //What happens when the game restarts 
     public void RestartGame()
     {
@@ -107,6 +109,8 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
         //NOTE: AS OF THIS EDIT, THE GAME OVER SCREEN DOES NOT EXIST YET.
+
+      
         _gameOver = _playerHealth.Health <= 0;
 
         _gameOverScreen.SetActive(_gameOver);
