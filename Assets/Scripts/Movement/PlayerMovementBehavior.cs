@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementBehavior : MonoBehaviour
 {
+    
 
     private Rigidbody rigidbody;
 
@@ -33,6 +34,6 @@ public class PlayerMovementBehavior : MonoBehaviour
      
 
         rigidbody.MovePosition(transform.position + _velocity);
-
+        
     }
 }
