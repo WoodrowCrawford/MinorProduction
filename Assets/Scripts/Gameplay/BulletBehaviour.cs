@@ -54,12 +54,11 @@ public class BulletBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //I want to get a refference to the health behaviour then put that in a health behaviour
-        HealthBehavior health = other.GetComponent<HealthBehavior>();
+       
 
        
         //I then need to call takeDamage on the health if the bullet collides with something that 
         //has health
-        if (health)
-            health.TakeDamage(Damage);
+        
     }
 }
