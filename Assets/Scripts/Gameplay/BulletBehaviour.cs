@@ -15,6 +15,7 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField]
     private float _despawnTime;
 
+
     //grabs the reference of the rigidbody and sets it in code
     public Rigidbody Rigidbody
     {
@@ -52,10 +53,11 @@ public class BulletBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Create a HealthBehaviour variable and set it equal to the health of what the bullet collides with
-        /*HealthBehaviour health = other.GetComponent<HealthBehaviour>();
+        HealthBehavior health = other.GetComponent<HealthBehavior>();
 
         //If the bullet collides with something that has health, call TakeDamage
         if (health)
-            health.TakeDamage(Damage);*/
+            health.TakeDamage(Damage);
+        
     }
 }
