@@ -10,20 +10,37 @@ public class HealthBehavior : MonoBehaviour
     private float _health;
 
 
+    public float Health
+    {
+        get
+        {
+            return _health;
+        }
+        set
+        {
+            _health = value;
+        }
+    }
 
     //This will be used when the object hits another object in the game.
     //It will decrease the health by a certain value.
     //The values can be changed.
-    void takeDamage()
+   public void TakeDamage(float damage)
     {
         //makes the new health value equal to the preivious health minus 1 (or any given number).
-        _health = _health - 1;
+
+        _health -= damage;
+
+        if (_health <= 0)
+            _health = 0;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    //A function that can heal the player by a given value. Can be used for a powerup.
+    public void Heal(int value)
     {
-       
+        Health += value;
+        if (Health <= 3)
+            Health = 3;
     }
 
     // Update is called once per frame
@@ -34,6 +51,11 @@ public class HealthBehavior : MonoBehaviour
         {
             //Destroys the current object from the scene.
             Destroy(gameObject);
+            ScoreBehavior score = GetComponent<ScoreBehavior>();
+
+            score.AddScore(1);
+
+            
         }
 
     }
