@@ -22,15 +22,19 @@ public class BossMovementBehaviour : MonoBehaviour
     {
         //Get a reference to the attached rigidbody
         _rigidbody = GetComponent<Rigidbody>();
+        //Get a reference to the navMeshAgent in use
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
+        //sets the targets destination on the NavMesh
         _navMeshAgent.SetDestination(_target.position);
 
+        //adds the deltaTime to the StartCos to make the speed match gameplay
         StartCos += Time.deltaTime;
 
+        //Makes the "boss" this script is put on move left and right
         transform.position += new Vector3(Mathf.Cos(StartCos), 0, 0) * HorizontalSpeed * Time.deltaTime;
     }
 }
