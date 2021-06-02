@@ -29,11 +29,11 @@ public class PlayerMovementBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // The Basic Clamp to prevent players moving  too far in one direction
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3, 3), transform.position.y, Mathf.Clamp(transform.position.z, -3, 3));
-     
+        // The Basic Clamp to prevent players moving too far in one direction
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3, 3), transform.position.y, Mathf.Clamp(transform.position.z, -12, -18));
 
-        rigidbody.MovePosition(transform.position + _velocity);
-        
+
+        //rigidbody.MovePosition(transform.position + _velocity);
+
     }
 }

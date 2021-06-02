@@ -9,6 +9,10 @@ public class SignBehaviour : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        other.transform.position += moveDirection * speed * Time.deltaTime;
+        if (other.CompareTag("Enemy"))
+        {
+            other.transform.position += moveDirection * speed * Time.deltaTime;
+        }
+        
     }
 }
