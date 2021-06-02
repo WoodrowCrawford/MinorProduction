@@ -14,6 +14,7 @@ public class GameManagerBehavior : MonoBehaviour
     //What happens when the the game is over
     public static GameEvent onGameOver;
 
+
     //The game over screen
     [SerializeField]
     private GameObject _gameOverScreen;
@@ -77,12 +78,17 @@ public class GameManagerBehavior : MonoBehaviour
             _score = value;
         }
     }
-    
+
+    //What happens when the player clicks start on the main menu
+    public void StartGame()
+    {
+        SceneManager.LoadScene("UITestingScene");
+    }
 
     //What happens when the game restarts 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     //What happens when the game quits
@@ -96,6 +102,7 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //Sets the score to be equal to zero when the game is started
         Score.RestartScore();
+        _playerHealth.Health = 3;
 
         //Sets the current wave to be 1
         Wave.RestartWave();
@@ -106,6 +113,8 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
         //NOTE: AS OF THIS EDIT, THE GAME OVER SCREEN DOES NOT EXIST YET.
+
+      
         _gameOver = _playerHealth.Health <= 0;
 
         _gameOverScreen.SetActive(_gameOver);
