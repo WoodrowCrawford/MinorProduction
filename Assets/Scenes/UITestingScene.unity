@@ -944,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238934853}
   - component: {fileID: 1238934852}
+  - component: {fileID: 1238934854}
   - component: {fileID: 1238934851}
   - component: {fileID: 1238934850}
   - component: {fileID: 1238934849}
@@ -951,7 +952,6 @@ GameObject:
   - component: {fileID: 1238934847}
   - component: {fileID: 1238934846}
   - component: {fileID: 1238934845}
-  - component: {fileID: 1238934854}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Untagged
@@ -984,8 +984,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a67e50715d17343816a50ba79159bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpawner: {fileID: 1940488670}
+  _barrel1: {fileID: 0}
+  _barrel2: {fileID: 0}
+  _barrel3: {fileID: 0}
   _playerShootcooldown: 1
+  RapidFire: {fileID: 0}
+  MultiShot: {fileID: 0}
 --- !u!114 &1238934847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,6 +1169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  RapidFireRef: {fileID: 0}
+  SpreadShotRef: {fileID: 0}
 --- !u!1 &1280854242
 GameObject:
   m_ObjectHideFlags: 0
