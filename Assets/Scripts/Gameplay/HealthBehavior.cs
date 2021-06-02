@@ -9,6 +9,16 @@ public class HealthBehavior : MonoBehaviour
     [SerializeField]
     private float _health;
 
+    [SerializeField]
+    private GameObject RapidFireRef;
+
+    [SerializeField]
+    private GameObject SpreadShotRef;
+
+    private int lowestChance = 0;
+
+    private int HighestChance = 10;
+
 
     public float Health
     {
@@ -49,6 +59,20 @@ public class HealthBehavior : MonoBehaviour
         //If health is less than or equal to 0, this will destroy the game object
         if (_health <= 0)
         {
+            int RandomChance = Random.Range(lowestChance, HighestChance);
+
+            if(RandomChance >= 0 && RandomChance <= 1)
+            {
+                GameObject SpawnedRef = Instantiate(SpreadShotRef, transform.position, transform.rotation);
+
+            }
+
+            else if (RandomChance >= 4 && RandomChance <= 5)
+            {
+                GameObject SpawnedRef = Instantiate(RapidFireRef, transform.position, transform.rotation);
+
+            }
+
             //Destroys the current object from the scene.
             Destroy(gameObject);
             ScoreBehavior score = GetComponent<ScoreBehavior>();
