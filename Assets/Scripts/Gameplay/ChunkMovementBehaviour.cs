@@ -9,7 +9,7 @@ public class ChunkMovementBehaviour : MonoBehaviour
     private float _velocity;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 tempPos = new Vector3(0, 0, -80);
         transform.position = Vector3.MoveTowards(transform.position, tempPos, _velocity * Time.deltaTime);
