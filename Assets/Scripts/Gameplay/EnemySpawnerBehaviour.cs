@@ -35,14 +35,18 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //On start, set waveNumber to be the current wave
         _waveNumber = _wave.Wave;
+        //set waveLength to be the current wave times 5
         _waveLength = _waveNumber * 5;
+        //Starts Coroutine and spawns objects
         StartCoroutine(SpawnObjects());
     }
 
     //Spawns enemies while _spawnEnemy is true
     public IEnumerator SpawnObjects()
     {
+        //if the wave is divisible by 5, spawn boss wave
         if ((_waveNumber % 5) == 0)
         {
             for (int i = 0; i < 1; i++)
@@ -52,6 +56,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
             }
         }
 
+        //if the wave is not divisible by 5, start normal wave
         if((_waveNumber % 5) != 0)
         {
             for (int i = 0; i < _waveLength; i++)
