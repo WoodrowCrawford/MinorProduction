@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MultiShot
   m_EditorClassIdentifier: 
   BackupTimer: 1
-  PowerUpTimer: 1
+  PowerUpTimer: 0.98
   isActive: 0
