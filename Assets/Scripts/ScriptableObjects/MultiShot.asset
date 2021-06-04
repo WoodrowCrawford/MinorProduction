@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackupTimer: 1
   PowerUpTimer: 1
-  isActive: 1
+  isActive: 0

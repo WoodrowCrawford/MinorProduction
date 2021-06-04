@@ -3711,6 +3711,11 @@ PrefabInstance:
       propertyPath: _despawnTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7326881091860173924, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7326881091860173927, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3769,7 +3774,7 @@ PrefabInstance:
     - target: {fileID: 7326881091860173946, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7326881091860173947, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
