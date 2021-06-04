@@ -7,10 +7,10 @@ public class WaveBehavior : MonoBehaviour
 {
     //The current wave that the player is on
     [SerializeField]
-    public int wave;
+    private int wave;
 
     [SerializeField]
-    public Text waveText;
+    private Text waveText;
 
 
     //Makes a reference of the wave value
@@ -48,7 +48,7 @@ public class WaveBehavior : MonoBehaviour
     void Update()
     {
         //Shows "Wave: #" on the screen
-        waveText.text = "Wave: " + wave;
+        //waveText.text = "Wave: " + wave;
     }
 
 }
