@@ -11,6 +11,7 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     private static bool _gameOver = false;
 
+
     //What happens when the the game is over
     public static GameEvent onGameOver;
 
@@ -82,13 +83,13 @@ public class GameManagerBehavior : MonoBehaviour
     //What happens when the player clicks start on the main menu
     public void StartGame()
     {
-        SceneManager.LoadScene("UITestingScene");
+        SceneManager.LoadScene("MainGame");
     }
 
     //What happens when the game restarts 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainGame");
     }
 
     //What happens when the game quits
