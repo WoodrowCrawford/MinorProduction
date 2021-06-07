@@ -6342,6 +6342,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7326881091860173944, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _playerShootcooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326881091860173946, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7326881091860173950, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: m_Name
