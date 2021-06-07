@@ -48,7 +48,7 @@ public class WaveBehavior : MonoBehaviour
     void Update()
     {
         //Shows "Wave: #" on the screen
-        waveText.text = "Wave: " + wave;
+        //waveText.text = "Wave: " + wave;
     }
 
 }
