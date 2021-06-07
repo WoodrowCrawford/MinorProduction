@@ -8470,7 +8470,8 @@ MonoBehaviour:
   _playerHealth: {fileID: 905129424}
   _score: {fileID: 1783841938}
   _wave: {fileID: 498024179}
-  _enemyHealth: {fileID: 0}
+  _enemyHealth: {fileID: 8241289292179611299, guid: c7a53c5a915866843a0f45e21b414acd,
+    type: 3}
 --- !u!4 &1323368473
 Transform:
   m_ObjectHideFlags: 0
