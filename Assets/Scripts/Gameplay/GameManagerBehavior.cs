@@ -66,7 +66,7 @@ public class GameManagerBehavior : MonoBehaviour
             _wave = value;
         }
     }
-    
+
 
     public ScoreBehavior Score
     {
@@ -114,7 +114,10 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
         //NOTE: AS OF THIS EDIT, THE GAME OVER SCREEN DOES NOT EXIST YET.
-
+        if(GameOver == true)
+        {
+            _gameOver = true;
+        }
       
         _gameOver = _playerHealth.Health <= 0;
 

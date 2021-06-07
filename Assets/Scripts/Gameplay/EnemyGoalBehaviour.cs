@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class EnemyGoalBehaviour : MonoBehaviour
 {
+    //Gets a reference of the player health for the game manager
+    [SerializeField]
+    private HealthBehavior _playerHealth;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Enemy") == true)
         {
             Destroy(other.gameObject);
-            //call take damage for the player here
-            //it should negate the health on the HUD
+            _playerHealth.TakeDamage(1);
         }
     }
 }
