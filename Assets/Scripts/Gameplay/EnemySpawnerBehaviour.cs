@@ -24,9 +24,6 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     [Tooltip("The maximum X position for the enemy.")]
     [SerializeField]
     private Transform _maxX;
-    [Tooltip("The max z that the enemy can go.")]
-    [SerializeField]
-    private Transform _zMin;
     [Tooltip("The wave that the player is on.")]
     [SerializeField]
     private WaveBehavior _wave;

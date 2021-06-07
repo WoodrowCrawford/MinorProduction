@@ -17,7 +17,7 @@ public class HealthBehavior : MonoBehaviour
 
     private int lowestChance = 0;
 
-    private int HighestChance = 10;
+    private int HighestChance = 30;
 
 
     public float Health
