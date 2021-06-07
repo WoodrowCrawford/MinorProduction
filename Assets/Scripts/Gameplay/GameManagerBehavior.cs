@@ -11,7 +11,6 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     private static bool _gameOver = false;
 
-
     //What happens when the the game is over
     public static GameEvent onGameOver;
 
