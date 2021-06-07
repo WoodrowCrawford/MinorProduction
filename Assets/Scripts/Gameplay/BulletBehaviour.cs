@@ -15,6 +15,7 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField]
     private float _despawnTime;
 
+
     //grabs the reference of the rigidbody and sets it in code
     public Rigidbody Rigidbody
     {
@@ -39,26 +40,24 @@ public class BulletBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Adds an initial force on start to get the bullet moving
-        _rigidbody.AddForce(-transform.right * _velocity);
-        //Destroys the bullet after a set despawn time
+        _rigidbody.AddForce(transform.forward * _velocity);
         Destroy(gameObject, _despawnTime);
     }
 
     private void Update()
     {
-        //Adds a constant force to the rigidbody of the bullet every frame
-        _rigidbody.AddForce(-transform.right * _velocity * Time.deltaTime);
+        _rigidbody.AddForce(transform.forward * _velocity * Time.deltaTime);
     }
 
     //COMPLETE WHEN HEALTHBEHAVIOUR IS DONE
     private void OnTriggerEnter(Collider other)
     {
         //Create a HealthBehaviour variable and set it equal to the health of what the bullet collides with
-        /*HealthBehaviour health = other.GetComponent<HealthBehaviour>();
+        HealthBehavior health = other.GetComponent<HealthBehavior>();
 
         //If the bullet collides with something that has health, call TakeDamage
         if (health)
-            health.TakeDamage(Damage);*/
+            health.TakeDamage(Damage);
+        
     }
 }

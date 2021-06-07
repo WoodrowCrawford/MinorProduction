@@ -29,13 +29,13 @@ public class GameManagerBehavior : MonoBehaviour
     //The player's current score
     //Uses the score behavior as a reference
     [SerializeField]
-    ScoreBehavior _score;
+    private ScoreBehavior _score;
 
 
     //The current wave the player is in
     //Uses the wave behavior as a reference
     [SerializeField]
-    WaveBehavior _wave;
+    private WaveBehavior _wave;
 
 
     //Gets a reference of the enemy health for the game manager.
