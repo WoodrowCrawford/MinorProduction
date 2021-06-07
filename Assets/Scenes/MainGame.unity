@@ -1860,7 +1860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383322436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.363657, y: 83.86571, z: -171.86}
+  m_LocalPosition: {x: 21.363657, y: 83.86571, z: -164.4867}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 80738447}
@@ -2071,7 +2071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497279275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.507, y: -101, z: 111.5}
+  m_LocalPosition: {x: 3.507, y: -101, z: 94.9}
   m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children:
   - {fileID: 1487046008}
@@ -3308,7 +3308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738392333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.363657, y: 83.86571, z: -314.8}
+  m_LocalPosition: {x: 21.363657, y: 83.86571, z: -314.78}
   m_LocalScale: {x: 500, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 80738447}
@@ -5791,13 +5791,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057025721}
-  m_LocalRotation: {x: 0.29355425, y: -0, z: -0, w: 0.95594245}
-  m_LocalPosition: {x: 0, y: 21.05, z: -9.13}
+  m_LocalRotation: {x: 0.3007042, y: -0, z: -0, w: 0.95371747}
+  m_LocalPosition: {x: 0, y: 21.05, z: 19.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 34.142002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!114 &1057025725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,7 +6300,7 @@ PrefabInstance:
     - target: {fileID: 7326881091860173927, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.55
+      value: 30.57
       objectReference: {fileID: 0}
     - target: {fileID: 7326881091860173927, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
@@ -8286,13 +8286,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 5382884069406108530, guid: c7a53c5a915866843a0f45e21b414acd, type: 3}
-  _bossEnemy: {fileID: 0}
+  _bossEnemy: {fileID: 5193708767115147240, guid: d69506f25da8eeb4b98ebb8388f92467,
+    type: 3}
   _spawnTimer: 1
   _spawnEnemy: 1
   _minX: {fileID: 1634516984}
   _maxX: {fileID: 1000318645}
-  _zMin: {fileID: 0}
-  _wave: {fileID: 0}
+  _wave: {fileID: 1350878464}
 --- !u!1001 &1489211095
 PrefabInstance:
   m_ObjectHideFlags: 0

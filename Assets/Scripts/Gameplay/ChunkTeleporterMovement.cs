@@ -23,6 +23,6 @@ public class ChunkTeleporterMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //When triggered, the chunks will teleport to z 80
-        other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, 80);
+        other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, _teleportPosition.position.z);
     }
 }
