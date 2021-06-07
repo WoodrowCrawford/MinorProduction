@@ -29,7 +29,7 @@ public class PauseBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (GamePaused)
         {

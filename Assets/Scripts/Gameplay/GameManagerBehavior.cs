@@ -83,13 +83,13 @@ public class GameManagerBehavior : MonoBehaviour
     //What happens when the player clicks start on the main menu
     public void StartGame()
     {
-        SceneManager.LoadScene("UITestingScene");
+        SceneManager.LoadScene("MainGame");
     }
 
     //What happens when the game restarts 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainGame");
     }
 
     //What happens when the game quits
