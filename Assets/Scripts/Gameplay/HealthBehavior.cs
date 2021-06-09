@@ -10,14 +10,16 @@ public class HealthBehavior : MonoBehaviour
     private float _health;
 
     [SerializeField]
-    private GameObject RapidFireRef;
+    private GameObject _rapidFireRef;
 
     [SerializeField]
-    private GameObject SpreadShotRef;
+    private GameObject _spreadShotRef;
 
-    private int lowestChance = 0;
+    private GameManagerBehavior _gameManager;
 
-    private int HighestChance = 30;
+    private int _lowestChance = 0;
+
+    private int _highestChance = 30;
 
 
     public float Health
@@ -53,32 +55,37 @@ public class HealthBehavior : MonoBehaviour
             Health = 3;
     }
 
+
+    public void Awake()
+    {
+        _gameManager = GetComponent<GameManagerBehavior>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         //If health is less than or equal to 0, this will destroy the game object
         if (_health <= 0)
         {
-            int RandomChance = Random.Range(lowestChance, HighestChance);
+            int RandomChance = Random.Range(_lowestChance, _highestChance);
 
             if(RandomChance >= 0 && RandomChance <= 1)
             {
-                GameObject SpawnedRef = Instantiate(SpreadShotRef, transform.position, transform.rotation);
+                GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
 
             }
 
             else if (RandomChance >= 4 && RandomChance <= 5)
             {
-                GameObject SpawnedRef = Instantiate(RapidFireRef, transform.position, transform.rotation);
+                GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
 
             }
 
             //Destroys the current object from the scene.
             Destroy(gameObject);
-            //ScoreBehavior score = GetComponent<ScoreBehavior>();
 
-            //score.AddScore(1);
-
+            GameManagerBehavior.score++;
+         
             
         }
 
