@@ -9,6 +9,7 @@ public class SignBehaviour : MonoBehaviour
     //Direction the objects will move in
     public Vector3 moveDirection;
 
+    //When an enemy collides with this object, the enemy moves in the specified moveDirection
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy"))
