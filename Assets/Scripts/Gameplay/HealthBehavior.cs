@@ -84,7 +84,12 @@ public class HealthBehavior : MonoBehaviour
             //Destroys the current object from the scene.
             Destroy(gameObject);
 
-            GameManagerBehavior.score++;
+            //This is used so that if the player dies it does not add to the score
+            if(CompareTag("Enemy"))
+            {
+                GameManagerBehavior.score++;
+            }
+            
          
             
         }
