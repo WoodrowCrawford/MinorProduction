@@ -30,9 +30,14 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     public static int score = 0;
 
+    //A value that keeps track of the current score
+    [SerializeField]
+    public static int wave = 1;
+
 
     //The current wave the player is in
     //Uses the wave behavior as a reference
+    //NOTE:: WILL DELETE SOON
     [SerializeField]
     private WaveBehavior _wave;
 
@@ -74,6 +79,7 @@ public class GameManagerBehavior : MonoBehaviour
     {
         SceneManager.LoadScene("MainGame");
         score = 0;
+        wave = 1;
     }
 
     //What happens when the game restarts 
@@ -81,6 +87,7 @@ public class GameManagerBehavior : MonoBehaviour
     {
         SceneManager.LoadScene("MainGame");
         score = 0;
+        wave = 1;
     }
 
     //What happens when the game quits
@@ -99,7 +106,7 @@ public class GameManagerBehavior : MonoBehaviour
         _playerHealth.Health = 3;
 
         //Sets the current wave to be 1
-        Wave.RestartWave();
+        wave = 1;
     }
 
     //Update is called once per frame
