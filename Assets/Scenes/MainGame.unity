@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2899,8 +2899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
-  RapidFireRef: {fileID: 0}
-  SpreadShotRef: {fileID: 0}
+  _rapidFireRef: {fileID: 0}
+  _spreadShotRef: {fileID: 0}
 --- !u!1 &918825271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,7 +4218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 993195529}
   _playerHealth: {fileID: 905129424}
-  _score: {fileID: 1783841938}
   _wave: {fileID: 498024179}
   _enemyHealth: {fileID: 8241289292179611299, guid: c7a53c5a915866843a0f45e21b414acd,
     type: 3}
@@ -5464,10 +5463,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1783841936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae38864f0e5c00499caebf203116ab0, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a3fc73d9a85924e8c1f1b79668a1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
   scoreText: {fileID: 1783841939}
 --- !u!114 &1783841939
 MonoBehaviour:

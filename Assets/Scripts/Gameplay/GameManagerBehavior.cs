@@ -26,10 +26,9 @@ public class GameManagerBehavior : MonoBehaviour
     private HealthBehavior _playerHealth;
 
 
-    //The player's current score
-    //Uses the score behavior as a reference
+    //A value that keeps track of the current score
     [SerializeField]
-    private ScoreBehavior _score;
+    public static int score = 0;
 
 
     //The current wave the player is in
@@ -68,28 +67,20 @@ public class GameManagerBehavior : MonoBehaviour
     }
 
 
-    public ScoreBehavior Score
-    {
-        get
-        {
-            return _score;
-        }
-        set
-        {
-            _score = value;
-        }
-    }
+    
 
     //What happens when the player clicks start on the main menu
     public void StartGame()
     {
         SceneManager.LoadScene("MainGame");
+        score = 0;
     }
 
     //What happens when the game restarts 
     public void RestartGame()
     {
         SceneManager.LoadScene("MainGame");
+        score = 0;
     }
 
     //What happens when the game quits
@@ -102,18 +93,20 @@ public class GameManagerBehavior : MonoBehaviour
     private void Start()
     {
         //Sets the score to be equal to zero when the game is started
-        Score.RestartScore();
+        score = 0;
+
+        //Sets the player health to be equal to 3 by default
         _playerHealth.Health = 3;
 
         //Sets the current wave to be 1
         Wave.RestartWave();
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
-        //NOTE: AS OF THIS EDIT, THE GAME OVER SCREEN DOES NOT EXIST YET.
+ 
         if(GameOver == true)
         {
             _gameOver = true;
@@ -122,8 +115,6 @@ public class GameManagerBehavior : MonoBehaviour
         _gameOver = _playerHealth.Health <= 0;
 
         _gameOverScreen.SetActive(_gameOver);
-        
-       
         
     }
 }
