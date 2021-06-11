@@ -65,7 +65,7 @@ public class GameManagerBehavior : MonoBehaviour
             _wave = value;
         }
     }
-    
+
 
     public ScoreBehavior Score
     {
@@ -82,13 +82,13 @@ public class GameManagerBehavior : MonoBehaviour
     //What happens when the player clicks start on the main menu
     public void StartGame()
     {
-        SceneManager.LoadScene("UITestingScene");
+        SceneManager.LoadScene("MainGame");
     }
 
     //What happens when the game restarts 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainGame");
     }
 
     //What happens when the game quits
@@ -113,7 +113,10 @@ public class GameManagerBehavior : MonoBehaviour
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
         //NOTE: AS OF THIS EDIT, THE GAME OVER SCREEN DOES NOT EXIST YET.
-
+        if(GameOver == true)
+        {
+            _gameOver = true;
+        }
       
         _gameOver = _playerHealth.Health <= 0;
 

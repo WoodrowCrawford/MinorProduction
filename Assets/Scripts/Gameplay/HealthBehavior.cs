@@ -17,7 +17,7 @@ public class HealthBehavior : MonoBehaviour
 
     private int lowestChance = 0;
 
-    private int HighestChance = 10;
+    private int HighestChance = 30;
 
 
     public float Health
@@ -75,9 +75,9 @@ public class HealthBehavior : MonoBehaviour
 
             //Destroys the current object from the scene.
             Destroy(gameObject);
-            ScoreBehavior score = GetComponent<ScoreBehavior>();
+            //ScoreBehavior score = GetComponent<ScoreBehavior>();
 
-            score.AddScore(1);
+            //score.AddScore(1);
 
             
         }

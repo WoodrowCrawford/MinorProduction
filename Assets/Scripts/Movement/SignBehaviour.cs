@@ -11,7 +11,10 @@ public class SignBehaviour : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        //On trigger, move the other object to the specified direction, at the specified speed
-        other.transform.position += moveDirection * speed * Time.deltaTime;
+        if (other.CompareTag("Enemy"))
+        {
+            other.transform.position += moveDirection * speed * Time.deltaTime;
+        }
+        
     }
 }
