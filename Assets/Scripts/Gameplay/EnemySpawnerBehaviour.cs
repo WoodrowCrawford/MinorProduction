@@ -48,6 +48,10 @@ public class EnemySpawnerBehaviour : MonoBehaviour
         //Starts Coroutine and spawns objects
         StartCoroutine(SpawnObjects());
     }
+    private void Update()
+    {
+        SpawnObjects();
+    }
 
     //Spawns enemies while _spawnEnemy is true
     public IEnumerator SpawnObjects()
@@ -89,10 +93,5 @@ public class EnemySpawnerBehaviour : MonoBehaviour
             }
         }
         
-    }
-
-    private void Update()
-    {
-        SpawnObjects();
     }
 }
