@@ -27,13 +27,21 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     [Tooltip("The wave that the player is on.")]
     [SerializeField]
     private WaveBehavior _wave;
+    [Tooltip("The GameManager.")]
+    [SerializeField]
+    private GameManagerBehavior _gameManager;
     private int _waveNumber;
+
+    void Awake()
+    {
+        _gameManager = GetComponent<GameManagerBehavior>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         //On start, set waveNumber to be the current wave
-        _waveNumber = _wave.Wave;
+        _waveNumber = GameManagerBehavior.wave;
         //set waveLength to be the current wave times 5
         _waveLength = _waveNumber * 5;
         //Starts Coroutine and spawns objects

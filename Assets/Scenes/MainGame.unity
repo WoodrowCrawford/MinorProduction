@@ -4542,6 +4542,7 @@ MonoBehaviour:
   _minX: {fileID: 1634516984}
   _maxX: {fileID: 1000318645}
   _wave: {fileID: 1350878464}
+  _gameManager: {fileID: 1323368472}
 --- !u!1 &1503926187
 GameObject:
   m_ObjectHideFlags: 0
