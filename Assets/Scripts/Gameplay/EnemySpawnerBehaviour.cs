@@ -26,16 +26,28 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     private Transform _maxX;
     [Tooltip("The wave that the player is on.")]
     [SerializeField]
-    private WaveBehavior _wave;
+    private GameManagerBehavior _gameManager;
+
+    
+    [SerializeField]
     private int _waveNumber;
 
+
+
+    private void Awake()
+    {
+        _gameManager = GetComponent<GameManagerBehavior>();
+    
+    }
     // Start is called before the first frame update
     void Start()
     {
         //On start, set waveNumber to be the current wave
-        _waveNumber = _wave.Wave;
+        _waveNumber = GameManagerBehavior.wave;
+
         //set waveLength to be the current wave times 5
-        _waveLength = _waveNumber * 5;
+        _waveLength = GameManagerBehavior.wave * 2;
+
         //Starts Coroutine and spawns objects
         StartCoroutine(SpawnObjects());
     }
@@ -44,18 +56,19 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     public IEnumerator SpawnObjects()
     {
         //if the wave is divisible by 5, spawn boss wave
-        if ((GameManagerBehavior.wave % 5) == 0)
+        if ((_waveLength % 5) == 0)
         {
             for (int i = 0; i < 1; i++)
             {
                 //Spawns boss wave
                 GameObject spawnBoss = Instantiate(_bossEnemy, transform.position, new Quaternion());
-                GameManagerBehavior.wave++;
+                
+
             }
         }
 
         //if the wave is not divisible by 5, start normal wave
-        if((GameManagerBehavior.wave % 5) != 0)
+        if((_waveLength % 5) != 0)
         {
             for (int i = 0; i < _waveLength; i++)
             {
@@ -63,7 +76,9 @@ public class EnemySpawnerBehaviour : MonoBehaviour
                 GameObject spawnEnemy = Instantiate(_enemy, transform.position, new Quaternion());
                 //Prevents enemies from spawning until the timer is up
                 yield return new WaitForSeconds(_spawnTimer);
-                GameManagerBehavior.wave++;
+
+               
+              
             }
         }
     }
