@@ -88,6 +88,7 @@ public class HealthBehavior : MonoBehaviour
             if(CompareTag("Enemy"))
             {
                 GameManagerBehavior.score++;
+        
             }
             
          

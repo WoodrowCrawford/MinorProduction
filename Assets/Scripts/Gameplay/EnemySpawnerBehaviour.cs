@@ -46,7 +46,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
         _waveNumber = GameManagerBehavior.wave;
 
         //set waveLength to be the current wave times 5
-        _waveLength = GameManagerBehavior.wave * 2;
+        _waveLength = GameManagerBehavior.wave * 4;
 
         //Starts Coroutine and spawns objects
         StartCoroutine(SpawnObjects());
@@ -55,31 +55,47 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     //Spawns enemies while _spawnEnemy is true
     public IEnumerator SpawnObjects()
     {
-        //if the wave is divisible by 5, spawn boss wave
-        if ((_waveLength % 5) == 0)
+        while(_spawnEnemy == true)
         {
-            for (int i = 0; i < 1; i++)
+            //if the wave is divisible by 5, spawn boss wave
+            if ((_waveLength % 5) == 0)
             {
-                //Spawns boss wave
-                GameObject spawnBoss = Instantiate(_bossEnemy, transform.position, new Quaternion());
-                
+                for (int i = 0; i < 1; i++)
+                {
+                    //Spawns boss wave
+                    GameObject spawnBoss = Instantiate(_bossEnemy, transform.position, new Quaternion());
+
+
+                }
+            }
+
+            //if the wave is not divisible by 5, start normal wave
+            if ((_waveLength % 5) != 0)
+            {
+                for (int i = 0; i < _waveLength; i++)
+                {
+                    //Spawns an enemy
+                    GameObject spawnEnemy = Instantiate(_enemy, transform.position, new Quaternion());
+                    //Prevents enemies from spawning until the timer is up
+                    yield return new WaitForSeconds(_spawnTimer);
+
+
+
+                }
 
             }
-        }
 
-        //if the wave is not divisible by 5, start normal wave
-        if((_waveLength % 5) != 0)
-        {
-            for (int i = 0; i < _waveLength; i++)
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)
             {
-                //Spawns an enemy
-                GameObject spawnEnemy = Instantiate(_enemy, transform.position, new Quaternion());
-                //Prevents enemies from spawning until the timer is up
-                yield return new WaitForSeconds(_spawnTimer);
-
-               
-              
+                GameManagerBehavior.wave++;
+                SpawnObjects();
             }
         }
+        
+    }
+
+    private void Update()
+    {
+        SpawnObjects();
     }
 }
