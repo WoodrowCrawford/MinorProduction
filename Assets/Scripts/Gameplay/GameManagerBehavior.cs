@@ -35,13 +35,6 @@ public class GameManagerBehavior : MonoBehaviour
     public static int wave = 1;
 
 
-    //The current wave the player is in
-    //Uses the wave behavior as a reference
-    //NOTE:: WILL DELETE SOON
-    [SerializeField]
-    private WaveBehavior _wave;
-
-
     //Gets a reference of the enemy health for the game manager.
     //NOTE: IF THIS DOES NOT HAVE A PURPOSE, CAN BE REMOVED.
     [SerializeField]
@@ -57,20 +50,6 @@ public class GameManagerBehavior : MonoBehaviour
         }
         
     }
-
-
-    public WaveBehavior Wave
-    {
-        get
-        {
-            return _wave;
-        }
-        set
-        {
-            _wave = value;
-        }
-    }
-
 
     
 

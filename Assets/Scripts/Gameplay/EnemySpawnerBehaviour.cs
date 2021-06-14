@@ -44,17 +44,18 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     public IEnumerator SpawnObjects()
     {
         //if the wave is divisible by 5, spawn boss wave
-        if ((_waveNumber % 5) == 0)
+        if ((GameManagerBehavior.wave % 5) == 0)
         {
             for (int i = 0; i < 1; i++)
             {
                 //Spawns boss wave
                 GameObject spawnBoss = Instantiate(_bossEnemy, transform.position, new Quaternion());
+                GameManagerBehavior.wave++;
             }
         }
 
         //if the wave is not divisible by 5, start normal wave
-        if((_waveNumber % 5) != 0)
+        if((GameManagerBehavior.wave % 5) != 0)
         {
             for (int i = 0; i < _waveLength; i++)
             {
@@ -62,6 +63,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
                 GameObject spawnEnemy = Instantiate(_enemy, transform.position, new Quaternion());
                 //Prevents enemies from spawning until the timer is up
                 yield return new WaitForSeconds(_spawnTimer);
+                GameManagerBehavior.wave++;
             }
         }
     }
