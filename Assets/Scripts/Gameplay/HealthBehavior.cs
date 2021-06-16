@@ -138,6 +138,7 @@ public class HealthBehavior : MonoBehaviour
                     Destroy(SpawnedRef, _despawnTimer);
                 }
 
+                //Test
                 GameManagerBehavior.score++;
             }
         }
