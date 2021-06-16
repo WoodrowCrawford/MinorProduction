@@ -46,7 +46,7 @@ public class HealthBehavior : MonoBehaviour
     //This will be used when the object hits another object in the game.
     //It will decrease the health by a certain value.
     //The values can be changed.
-   public void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         //makes the new health value equal to the preivious health minus 1 (or any given number).
 
@@ -78,12 +78,11 @@ public class HealthBehavior : MonoBehaviour
         {
             int RandomChance = Random.Range(_lowestChance, _highestChance);
 
-
             //Destroys the current object from the scene.
             Destroy(gameObject);
 
             //This is used so that if the player dies it does not add to the score
-            if(CompareTag("Enemy"))
+            if (CompareTag("Enemy"))
             {
 
                 if (RandomChance >= 0 && RandomChance <= 1)
@@ -101,17 +100,7 @@ public class HealthBehavior : MonoBehaviour
 
                 GameManagerBehavior.score++;
             }
-
-            if (CompareTag("Player"))
-            {
-                SpreadShotOnDeath.isActive = false;
-                SpreadShotOnDeath.PowerUpTimer = 1;
-
-                RapidOnDeath.isActive = false;
-                RapidOnDeath.PowerUpTimer = 1;
-            }
-
         }
-
     }
-}
+}
+

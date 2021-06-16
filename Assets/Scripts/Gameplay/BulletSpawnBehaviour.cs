@@ -13,6 +13,9 @@ public class BulletSpawnBehaviour : MonoBehaviour
     [Tooltip("The bullet that will be shot.")]
     [SerializeField]
     private GameObject _bullet;
+    [Tooltip("The one shooting the bullets.")]
+    [SerializeField]
+    private GameObject _owner;
     [Tooltip("The time before the bullet gets destroyed.")]
     [SerializeField]
     private float _despawnTime;
@@ -24,6 +27,7 @@ public class BulletSpawnBehaviour : MonoBehaviour
         if(_isActive == true)
         {
             Instantiate(_bullet, _barrel.position, _barrel.rotation);
+            _bullet.GetComponent<BulletBehaviour>().Owner = _owner;
         }
     }
 }
