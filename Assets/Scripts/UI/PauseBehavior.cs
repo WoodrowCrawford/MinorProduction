@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseBehavior : MonoBehaviour
 {
 
     public GameObject PauseScreen;
 
-    bool GamePaused;
+    [SerializeField]
+    public bool GamePaused;
+
+    private PlayerControls _player;
 
     //Pauses the game
     public void PauseGame()
@@ -29,11 +33,16 @@ public class PauseBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if (Input.GetButtonDown("Pause"))
+        {
+            GamePaused = !GamePaused;
+        }
+
         if (GamePaused)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0.000001f;
         }
         else
         {

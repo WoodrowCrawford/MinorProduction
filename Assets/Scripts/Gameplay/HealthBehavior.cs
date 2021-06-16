@@ -21,6 +21,12 @@ public class HealthBehavior : MonoBehaviour
 
     private int _highestChance = 30;
 
+    [SerializeField]
+    private PowerUpScriptableObject RapidOnDeath;
+
+    [SerializeField]
+    private PowerUpScriptableObject SpreadShotOnDeath;
+
 
     public float Health
     {
@@ -69,17 +75,6 @@ public class HealthBehavior : MonoBehaviour
         {
             int RandomChance = Random.Range(_lowestChance, _highestChance);
 
-            if(RandomChance >= 0 && RandomChance <= 1)
-            {
-                GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
-
-            }
-
-            else if (RandomChance >= 4 && RandomChance <= 5)
-            {
-                GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
-
-            }
 
             //Destroys the current object from the scene.
             Destroy(gameObject);
@@ -87,11 +82,31 @@ public class HealthBehavior : MonoBehaviour
             //This is used so that if the player dies it does not add to the score
             if(CompareTag("Enemy"))
             {
+
+                if (RandomChance >= 0 && RandomChance <= 1)
+                {
+                    GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
+
+                }
+
+                else if (RandomChance >= 4 && RandomChance <= 5)
+                {
+                    GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
+
+                }
+
                 GameManagerBehavior.score++;
             }
-            
-         
-            
+
+            if (CompareTag("Player"))
+            {
+                SpreadShotOnDeath.isActive = false;
+                SpreadShotOnDeath.PowerUpTimer = 1;
+
+                RapidOnDeath.isActive = false;
+                RapidOnDeath.PowerUpTimer = 1;
+            }
+
         }
 
     }
