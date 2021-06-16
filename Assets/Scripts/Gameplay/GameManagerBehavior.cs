@@ -100,7 +100,10 @@ public class GameManagerBehavior : MonoBehaviour
             wave++;
         }
       
-        _gameOver = _playerHealth.Health <= 0;
+        if (_playerHealth.Health <= 0)
+        {
+            _gameOver = true;
+        }
 
         _gameOverScreen.SetActive(_gameOver);
         
