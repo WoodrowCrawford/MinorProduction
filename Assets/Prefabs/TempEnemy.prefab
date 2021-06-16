@@ -129,3 +129,6 @@ MonoBehaviour:
     type: 3}
   _spreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
     type: 3}
+  _despawnTimer: 5
+  RapidOnDeath: {fileID: 0}
+  SpreadShotOnDeath: {fileID: 0}
