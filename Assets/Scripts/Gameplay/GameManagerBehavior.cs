@@ -92,10 +92,15 @@ public class GameManagerBehavior : MonoBehaviour
     void Update()
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
- 
-        if(GameOver == true)
+
+        if (GameOver == true)
         {
             _gameOver = true;
+        }
+
+        if (score == (wave * 5))
+        {
+            wave++;
         }
       
         _gameOver = _playerHealth.Health <= 0;

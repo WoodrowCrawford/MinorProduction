@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 181805837896123741}
   - component: {fileID: 7451363795236245962}
   - component: {fileID: 7466776737372983539}
-  - component: {fileID: -1975069087329662395}
-  - component: {fileID: 8308274017673130892}
   - component: {fileID: -6716614736664327196}
   m_Layer: 0
   m_Name: TempBoss
@@ -128,44 +126,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!195 &-1975069087329662395
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5193708767115147240}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &8308274017673130892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5193708767115147240}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 024a698ad2e7d414eb63c25d6a025183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
-  _target: {fileID: 0}
-  HorizontalSpeed: 2
-  StartCos: 0
 --- !u!114 &-6716614736664327196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,5 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
-  _rapidFireRef: {fileID: 0}
-  _spreadShotRef: {fileID: 0}
+  _rapidFireRef: {fileID: 1300691835941790382, guid: 8822a589283e7d646a50e09b285062e4,
+    type: 3}
+  _spreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
+    type: 3}
