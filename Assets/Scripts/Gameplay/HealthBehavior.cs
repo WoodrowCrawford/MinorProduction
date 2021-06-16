@@ -100,6 +100,15 @@ public class HealthBehavior : MonoBehaviour
 
                 GameManagerBehavior.score++;
             }
+
+            if (CompareTag("Player"))
+            {
+                RapidOnDeath.isActive = false;
+                SpreadShotOnDeath.isActive = false;
+
+                RapidOnDeath.PowerUpTimer = 1;
+                SpreadShotOnDeath.PowerUpTimer = 1;
+            }
         }
     }
 }
