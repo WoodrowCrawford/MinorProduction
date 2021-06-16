@@ -75,6 +75,8 @@ public class GameManagerBehavior : MonoBehaviour
 
     private void Start()
     {
+        _gameOver = false;
+
         //Sets the score to be equal to zero when the game is started
         score = 0;
 
