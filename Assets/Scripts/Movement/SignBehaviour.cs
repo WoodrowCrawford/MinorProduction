@@ -16,6 +16,5 @@ public class SignBehaviour : MonoBehaviour
         {
             other.transform.position += moveDirection * speed * Time.deltaTime;
         }
-        
     }
 }
