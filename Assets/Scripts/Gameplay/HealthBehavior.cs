@@ -46,7 +46,7 @@ public class HealthBehavior : MonoBehaviour
     //This will be used when the object hits another object in the game.
     //It will decrease the health by a certain value.
     //The values can be changed.
-   public void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         //makes the new health value equal to the preivious health minus 1 (or any given number).
 
@@ -78,7 +78,6 @@ public class HealthBehavior : MonoBehaviour
         {
             int RandomChance = Random.Range(_lowestChance, _highestChance);
 
-
             //Destroys the current object from the scene.
             Destroy(gameObject);
 
@@ -100,23 +99,48 @@ public class HealthBehavior : MonoBehaviour
                 }
 
                 GameManagerBehavior.score++;
+<<<<<<<<< Temporary merge branch 1
+        
             }
             
          
             
-        }
+=========
+            }
 
-    }
-}
-
-            }
-
-            if (CompareTag("Player"))
-            {
+            if (CompareTag("Player"))
+            {
                 SpreadShotOnDeath.isActive = false;
                 SpreadShotOnDeath.PowerUpTimer = 1;
 
                 RapidOnDeath.isActive = false;
                 RapidOnDeath.PowerUpTimer = 1;
-            }
+            }
+
+>>>>>>>>> Temporary merge branch 2
+        }
+
+    }
+}
+
+            if (CompareTag("Enemy"))
+            {
+                if (RandomChance >= 0 && RandomChance <= 1)
+                {
+                    GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
+                    Destroy(SpawnedRef, _despawnTimer);
+
+                }
+
+                else if (RandomChance >= 4 && RandomChance <= 5)
+                {
+                    GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
+                    Destroy(SpawnedRef, _despawnTimer);
+                }
+
+                GameManagerBehavior.score++;
+            }
+        }
+    }
+}
 
