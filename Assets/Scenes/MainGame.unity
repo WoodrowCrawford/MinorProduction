@@ -1356,6 +1356,7 @@ GameObject:
   - component: {fileID: 498024181}
   - component: {fileID: 498024180}
   - component: {fileID: 498024179}
+  - component: {fileID: 498024182}
   m_Layer: 5
   m_Name: Wave
   m_TagString: Untagged
@@ -1389,7 +1390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498024177}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74d7bcf0b5241eb4dafc4876cbfc5c9f, type: 3}
   m_Name: 
@@ -1436,6 +1437,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498024177}
   m_CullTransparentMesh: 0
+--- !u!114 &498024182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498024177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29f17be9f0b07a40b822e9bfd89b0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveText: {fileID: 498024180}
 --- !u!1 &521119777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,6 +3764,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7326881091461966639, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _owner
+      value: 
+      objectReference: {fileID: 905129423}
     - target: {fileID: 7326881091860173927, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3830,6 +3849,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7326881091952252048, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _owner
+      value: 
+      objectReference: {fileID: 905129423}
+    - target: {fileID: 7326881093052137643, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _owner
+      value: 
+      objectReference: {fileID: 905129423}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977f045d0a31b0f4aa88857412dcab1e, type: 3}
 --- !u!1 &1153982044
@@ -4231,7 +4260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 993195529}
   _playerHealth: {fileID: 905129424}
-  _wave: {fileID: 498024179}
   _enemyHealth: {fileID: 8241289292179611299, guid: c7a53c5a915866843a0f45e21b414acd,
     type: 3}
 --- !u!4 &1323368473
@@ -4258,6 +4286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1350878465}
   - component: {fileID: 1350878464}
+  - component: {fileID: 1350878466}
   m_Layer: 0
   m_Name: waveBehaviour
   m_TagString: Untagged
@@ -4272,7 +4301,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350878463}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74d7bcf0b5241eb4dafc4876cbfc5c9f, type: 3}
   m_Name: 
@@ -4293,6 +4322,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350878466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350878463}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29f17be9f0b07a40b822e9bfd89b0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveText: {fileID: 498024180}
 --- !u!1 &1383508070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,6 +4555,7 @@ MonoBehaviour:
   _minX: {fileID: 1634516984}
   _maxX: {fileID: 1000318645}
   _wave: {fileID: 1350878464}
+  _gameManager: {fileID: 1323368472}
 --- !u!1 &1503926187
 GameObject:
   m_ObjectHideFlags: 0

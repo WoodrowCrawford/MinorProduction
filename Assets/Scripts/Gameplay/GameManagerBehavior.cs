@@ -30,11 +30,9 @@ public class GameManagerBehavior : MonoBehaviour
     [SerializeField]
     public static int score = 0;
 
-
-    //The current wave the player is in
-    //Uses the wave behavior as a reference
+    //A value that keeps track of the current score
     [SerializeField]
-    private WaveBehavior _wave;
+    public static int wave = 1;
 
 
     //Gets a reference of the enemy health for the game manager.
@@ -53,27 +51,12 @@ public class GameManagerBehavior : MonoBehaviour
         
     }
 
-
-    public WaveBehavior Wave
-    {
-        get
-        {
-            return _wave;
-        }
-        set
-        {
-            _wave = value;
-        }
-    }
-
-
-    
-
     //What happens when the player clicks start on the main menu
     public void StartGame()
     {
         SceneManager.LoadScene("MainGame");
         score = 0;
+        wave = 1;
     }
 
     //What happens when the game restarts 
@@ -81,6 +64,7 @@ public class GameManagerBehavior : MonoBehaviour
     {
         SceneManager.LoadScene("MainGame");
         score = 0;
+        wave = 1;
     }
 
     //What happens when the game quits
@@ -88,7 +72,6 @@ public class GameManagerBehavior : MonoBehaviour
     {
         Application.Quit();
     }
-
 
     private void Start()
     {
@@ -99,17 +82,22 @@ public class GameManagerBehavior : MonoBehaviour
         _playerHealth.Health = 3;
 
         //Sets the current wave to be 1
-        Wave.RestartWave();
+        wave = 1;
     }
 
     //Update is called once per frame
     void Update()
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
- 
-        if(GameOver == true)
+
+        if (GameOver == true)
         {
             _gameOver = true;
+        }
+
+        if (score == (wave * 5))
+        {
+            wave++;
         }
       
         _gameOver = _playerHealth.Health <= 0;
