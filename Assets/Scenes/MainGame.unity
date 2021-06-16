@@ -2298,7 +2298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ae748eefb8754b8be2d3ab0044710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseScreen: {fileID: 0}
+  PauseScreen: {fileID: 782534234}
+  GamePaused: 0
 --- !u!114 &782534236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2913,8 +2914,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
-  _rapidFireRef: {fileID: 0}
-  _spreadShotRef: {fileID: 0}
+  _rapidFireRef: {fileID: 1300691835941790382, guid: 8822a589283e7d646a50e09b285062e4,
+    type: 3}
+  _spreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
+    type: 3}
 --- !u!1 &918825271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,6 +3829,16 @@ PrefabInstance:
       propertyPath: _playerShootcooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7326881091860173944, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: Paused
+      value: 
+      objectReference: {fileID: 782534235}
+    - target: {fileID: 7326881091860173944, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: Pause
+      value: 
+      objectReference: {fileID: 782534235}
     - target: {fileID: 7326881091860173946, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: speed
