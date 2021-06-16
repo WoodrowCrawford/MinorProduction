@@ -104,7 +104,7 @@ public class InputDelegatesBehavior : MonoBehaviour
                 // This block of code is ran when a power up is active and collected
                 if (RapidFire.isActive)
                 {
-                    _playerShootcooldown = 1;
+                    _playerShootcooldown = .2f;
 
                     // If the timer is equal to or less than 0 the rapid fire is turned off 
                     // the cooldown for the player shooting is reset 
