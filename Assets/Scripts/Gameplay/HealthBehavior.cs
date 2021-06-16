@@ -82,49 +82,9 @@ public class HealthBehavior : MonoBehaviour
             Destroy(gameObject);
 
             //This is used so that if the player dies it does not add to the score
-            if(CompareTag("Enemy"))
-            {
-
-                if (RandomChance >= 0 && RandomChance <= 1)
-                {
-                    GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
-                    Destroy(SpawnedRef, _despawnTimer);
-
-                }
-
-                else if (RandomChance >= 4 && RandomChance <= 5)
-                {
-                    GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
-                    Destroy(SpawnedRef, _despawnTimer);
-                }
-
-                GameManagerBehavior.score++;
-<<<<<<<<< Temporary merge branch 1
-        
-            }
-            
-         
-            
-=========
-            }
-
-            if (CompareTag("Player"))
-            {
-                SpreadShotOnDeath.isActive = false;
-                SpreadShotOnDeath.PowerUpTimer = 1;
-
-                RapidOnDeath.isActive = false;
-                RapidOnDeath.PowerUpTimer = 1;
-            }
-
->>>>>>>>> Temporary merge branch 2
-        }
-
-    }
-}
-
             if (CompareTag("Enemy"))
             {
+
                 if (RandomChance >= 0 && RandomChance <= 1)
                 {
                     GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
