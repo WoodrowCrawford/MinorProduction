@@ -14,7 +14,8 @@ public class BulletBehaviour : MonoBehaviour
     [Tooltip("The time before despawning the bullet.")]
     [SerializeField]
     private float _despawnTime;
-
+    public GameObject Owner;
+    //Give gun and bullet an owner
 
     //grabs the reference of the rigidbody and sets it in code
     public Rigidbody Rigidbody
@@ -55,9 +56,12 @@ public class BulletBehaviour : MonoBehaviour
         //Create a HealthBehaviour variable and set it equal to the health of what the bullet collides with
         HealthBehavior health = other.GetComponent<HealthBehavior>();
 
-        //If the bullet collides with something that has health, call TakeDamage
-        if (health)
-            health.TakeDamage(Damage);
-        
+        //check owner on collision before dealing damage
+        if(other.gameObject != Owner)
+        {
+            //If the bullet collides with something that has health, call TakeDamage
+            if (health)
+                health.TakeDamage(Damage);
+        }
     }
 }

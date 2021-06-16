@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8241289292179611299}
   m_Layer: 0
   m_Name: TempEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -125,7 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  RapidFireRef: {fileID: 1300691835941790382, guid: 8822a589283e7d646a50e09b285062e4,
+  _rapidFireRef: {fileID: 1300691835941790382, guid: 8822a589283e7d646a50e09b285062e4,
     type: 3}
-  SpreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
+  _spreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
     type: 3}
+  _despawnTimer: 5
+  RapidOnDeath: {fileID: 0}
+  SpreadShotOnDeath: {fileID: 0}

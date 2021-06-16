@@ -25,6 +25,7 @@ public class InputEventBehavior : MonoBehaviour
     {
         _gun.Shoot();
     }
+
     // Update is called once per frame
     void Update()
     {

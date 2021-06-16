@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370040777}
   m_LocalRotation: {x: 0.55885327, y: -0, z: -0, w: 0.8292666}
-  m_LocalPosition: {x: 0, y: 12.35, z: -2.44}
+  m_LocalPosition: {x: 0, y: 13.76, z: -3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -483,6 +483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326881091860173944, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _playerShootcooldown
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7326881091860173950, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}

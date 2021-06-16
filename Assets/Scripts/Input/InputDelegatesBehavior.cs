@@ -35,6 +35,9 @@ public class InputDelegatesBehavior : MonoBehaviour
 
     private float _backUpTimer;
 
+    [SerializeField]
+    private PauseBehavior Pause;
+
     private PlayerMovementBehavior _movement;
 
     public void Awake()
@@ -61,11 +64,13 @@ public class InputDelegatesBehavior : MonoBehaviour
         //_controls.Player.Shoot.performed += context => _bulletSpawner.Shoot();
     }
 
+
     // Update is called once per frame
     void FixedUpdate()
     {
         // A vector to chenage the the y of the read value to be the z instead for the player to move forward
         Vector3 MoveDirection = new Vector3(_controls.Player.Movement.ReadValue<Vector2>().x, 0, _controls.Player.Movement.ReadValue<Vector2>().y);
+
         _movement.Move(MoveDirection);
 
         // If the cooldown is 0 then the player is allowed to shoot
@@ -79,11 +84,13 @@ public class InputDelegatesBehavior : MonoBehaviour
                 _barrel1.Shoot();
                 _playerShootcooldown = _startingTimer;
 
+                // Once the Spreadshot is collected the other two barrels are activated and can shoot!
                 if (MultiShot.isActive)
                 {
                     _barrel2.Shoot();
                     _barrel3.Shoot();
 
+                    // When the timer of the power up is done the barrels are disabled and the timer is reset
                     if (MultiShot.PowerUpTimer <= 0)
                     {
                         MultiShot.isActive = false;
@@ -97,7 +104,7 @@ public class InputDelegatesBehavior : MonoBehaviour
                 // This block of code is ran when a power up is active and collected
                 if (RapidFire.isActive)
                 {
-                    _playerShootcooldown = 0;
+                    _playerShootcooldown = .2f;
 
                     // If the timer is equal to or less than 0 the rapid fire is turned off 
                     // the cooldown for the player shooting is reset 
@@ -123,4 +130,6 @@ public class InputDelegatesBehavior : MonoBehaviour
        }
 
     }
+
+    
 }

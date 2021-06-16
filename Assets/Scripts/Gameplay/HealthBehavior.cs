@@ -10,14 +10,25 @@ public class HealthBehavior : MonoBehaviour
     private float _health;
 
     [SerializeField]
-    private GameObject RapidFireRef;
+    private GameObject _rapidFireRef;
 
     [SerializeField]
-    private GameObject SpreadShotRef;
+    private GameObject _spreadShotRef;
 
-    private int lowestChance = 0;
+    private GameManagerBehavior _gameManager;
 
-    private int HighestChance = 10;
+    private int _lowestChance = 0;
+
+    private int _highestChance = 30;
+
+    [SerializeField]
+    private float _despawnTimer;
+
+    [SerializeField]
+    private PowerUpScriptableObject RapidOnDeath;
+
+    [SerializeField]
+    private PowerUpScriptableObject SpreadShotOnDeath;
 
 
     public float Health
@@ -35,7 +46,7 @@ public class HealthBehavior : MonoBehaviour
     //This will be used when the object hits another object in the game.
     //It will decrease the health by a certain value.
     //The values can be changed.
-   public void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         //makes the new health value equal to the preivious health minus 1 (or any given number).
 
@@ -53,34 +64,43 @@ public class HealthBehavior : MonoBehaviour
             Health = 3;
     }
 
+
+    public void Awake()
+    {
+        _gameManager = GetComponent<GameManagerBehavior>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         //If health is less than or equal to 0, this will destroy the game object
         if (_health <= 0)
         {
-            int RandomChance = Random.Range(lowestChance, HighestChance);
-
-            if(RandomChance >= 0 && RandomChance <= 1)
-            {
-                GameObject SpawnedRef = Instantiate(SpreadShotRef, transform.position, transform.rotation);
-
-            }
-
-            else if (RandomChance >= 4 && RandomChance <= 5)
-            {
-                GameObject SpawnedRef = Instantiate(RapidFireRef, transform.position, transform.rotation);
-
-            }
+            int RandomChance = Random.Range(_lowestChance, _highestChance);
 
             //Destroys the current object from the scene.
             Destroy(gameObject);
-            ScoreBehavior score = GetComponent<ScoreBehavior>();
 
-            score.AddScore(1);
+            //This is used so that if the player dies it does not add to the score
+            if (CompareTag("Enemy"))
+            {
 
-            
+                if (RandomChance >= 0 && RandomChance <= 1)
+                {
+                    GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
+                    Destroy(SpawnedRef, _despawnTimer);
+
+                }
+
+                else if (RandomChance >= 4 && RandomChance <= 5)
+                {
+                    GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
+                    Destroy(SpawnedRef, _despawnTimer);
+                }
+
+                GameManagerBehavior.score++;
+            }
         }
-
     }
-}
+}
+
