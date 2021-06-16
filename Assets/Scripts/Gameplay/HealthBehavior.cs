@@ -64,6 +64,14 @@ public class HealthBehavior : MonoBehaviour
             Health = 3;
     }
 
+    private void PowerUpLostOnDeath()
+    {
+        RapidOnDeath.isActive = false;
+        SpreadShotOnDeath.isActive = false;
+
+        RapidOnDeath.PowerUpTimer = 1;
+        SpreadShotOnDeath.PowerUpTimer = 1;
+    }
 
     public void Awake()
     {
@@ -103,11 +111,7 @@ public class HealthBehavior : MonoBehaviour
 
             if (CompareTag("Player"))
             {
-                RapidOnDeath.isActive = false;
-                SpreadShotOnDeath.isActive = false;
-
-                RapidOnDeath.PowerUpTimer = 1;
-                SpreadShotOnDeath.PowerUpTimer = 1;
+                PowerUpLostOnDeath();
             }
         }
     }
