@@ -22,6 +22,9 @@ public class HealthBehavior : MonoBehaviour
     private int _highestChance = 30;
 
     [SerializeField]
+    private float _despawnTimer;
+
+    [SerializeField]
     private PowerUpScriptableObject RapidOnDeath;
 
     [SerializeField]
@@ -86,13 +89,14 @@ public class HealthBehavior : MonoBehaviour
                 if (RandomChance >= 0 && RandomChance <= 1)
                 {
                     GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
+                    Destroy(SpawnedRef, _despawnTimer);
 
                 }
 
                 else if (RandomChance >= 4 && RandomChance <= 5)
                 {
                     GameObject SpawnedRef = Instantiate(_rapidFireRef, transform.position, transform.rotation);
-
+                    Destroy(SpawnedRef, _despawnTimer);
                 }
 
                 GameManagerBehavior.score++;
