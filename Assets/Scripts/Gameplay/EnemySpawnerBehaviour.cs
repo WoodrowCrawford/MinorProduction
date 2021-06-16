@@ -26,30 +26,31 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     private Transform _maxX;
     [Tooltip("The wave that the player is on.")]
     [SerializeField]
-    private GameManagerBehavior _gameManager;
-
-    
+    private WaveBehavior _wave;
+    [Tooltip("The GameManager.")]
     [SerializeField]
+    private GameManagerBehavior _gameManager;
     private int _waveNumber;
 
-
-
-    private void Awake()
+    void Awake()
     {
         _gameManager = GetComponent<GameManagerBehavior>();
-    
     }
+
     // Start is called before the first frame update
     void Start()
     {
         //On start, set waveNumber to be the current wave
-        _waveNumber = GameManagerBehavior.wave;
-
+        _waveNumber = _wave.Wave;
         //set waveLength to be the current wave times 5
         _waveLength = GameManagerBehavior.wave * 4;
 
         //Starts Coroutine and spawns objects
         StartCoroutine(SpawnObjects());
+    }
+    private void Update()
+    {
+        SpawnObjects();
     }
 
     //Spawns enemies while _spawnEnemy is true
@@ -92,10 +93,5 @@ public class EnemySpawnerBehaviour : MonoBehaviour
             }
         }
         
-    }
-
-    private void Update()
-    {
-        SpawnObjects();
     }
 }

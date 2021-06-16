@@ -51,8 +51,6 @@ public class GameManagerBehavior : MonoBehaviour
         
     }
 
-    
-
     //What happens when the player clicks start on the main menu
     public void StartGame()
     {
@@ -75,7 +73,6 @@ public class GameManagerBehavior : MonoBehaviour
         Application.Quit();
     }
 
-
     private void Start()
     {
         //Sets the score to be equal to zero when the game is started
@@ -92,10 +89,15 @@ public class GameManagerBehavior : MonoBehaviour
     void Update()
     {
         //If the player health is less than or greater than 0, then the game over screen will appear
- 
-        if(GameOver == true)
+
+        if (GameOver == true)
         {
             _gameOver = true;
+        }
+
+        if (score == (wave * 5))
+        {
+            wave++;
         }
       
         _gameOver = _playerHealth.Health <= 0;

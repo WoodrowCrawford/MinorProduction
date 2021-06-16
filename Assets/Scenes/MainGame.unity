@@ -2907,6 +2907,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f8c3f3d2435674e910b0a175716d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 3
+  _rapidFireRef: {fileID: 1300691835941790382, guid: 8822a589283e7d646a50e09b285062e4,
+    type: 3}
+  _spreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
+    type: 3}
 --- !u!1 &918825271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,6 +3758,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7326881091461966639, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _owner
+      value: 
+      objectReference: {fileID: 905129423}
     - target: {fileID: 7326881091860173927, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3833,6 +3843,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7326881091952252048, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _owner
+      value: 
+      objectReference: {fileID: 905129423}
+    - target: {fileID: 7326881093052137643, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: _owner
+      value: 
+      objectReference: {fileID: 905129423}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977f045d0a31b0f4aa88857412dcab1e, type: 3}
 --- !u!1 &1153982044
@@ -4528,8 +4548,8 @@ MonoBehaviour:
   _spawnEnemy: 1
   _minX: {fileID: 1634516984}
   _maxX: {fileID: 1000318645}
+  _wave: {fileID: 1350878464}
   _gameManager: {fileID: 1323368472}
-  _waveNumber: 1
 --- !u!1 &1503926187
 GameObject:
   m_ObjectHideFlags: 0
