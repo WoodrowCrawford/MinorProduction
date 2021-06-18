@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09535c18d892d7540875442a11fb516d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 905129424}
+  _playerHealth: {fileID: 905129425}
 --- !u!65 &287079894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2901,11 +2901,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1146688093}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &905129424
+--- !u!114 &905129425 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5714984234900271322, guid: 977f045d0a31b0f4aa88857412dcab1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1146688093}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905129423}
   m_Enabled: 1
@@ -2913,17 +2913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f8c3f3d2435674e910b0a175716d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
-  RapidFireRef: {fileID: 1300691835941790382, guid: 8822a589283e7d646a50e09b285062e4,
-    type: 3}
-  SpreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
-    type: 3}
---- !u!1 &908348321 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 09d66d632fd161946bca393e561a3219,
-    type: 3}
-  _spreadShotRef: {fileID: 7739056959609942883, guid: d7c9365c74ed223429209eb4db4a593f,
-    type: 3}
 --- !u!1 &918825271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,7 +2964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e2a3397a18a074aa75f3acf542d16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 905129424}
+  _health: {fileID: 905129425}
   _HealthGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -3845,6 +3834,16 @@ PrefabInstance:
       propertyPath: Pause
       value: 
       objectReference: {fileID: 782534235}
+    - target: {fileID: 7326881091860173945, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1057025723}
+    - target: {fileID: 7326881091860173945, guid: 977f045d0a31b0f4aa88857412dcab1e,
+        type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 742276404}
     - target: {fileID: 7326881091860173946, guid: 977f045d0a31b0f4aa88857412dcab1e,
         type: 3}
       propertyPath: speed
@@ -4265,7 +4264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 993195529}
-  _playerHealth: {fileID: 905129424}
+  _playerHealth: {fileID: 905129425}
   _enemyHealth: {fileID: 8241289292179611299, guid: c7a53c5a915866843a0f45e21b414acd,
     type: 3}
 --- !u!4 &1323368473
