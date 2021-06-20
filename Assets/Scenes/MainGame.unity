@@ -5874,12 +5874,27 @@ MonoBehaviour:
   - name: PlayerHurt
     clip: {fileID: 8300000, guid: 686896a105297d749b4cd56d3c75cf3a, type: 3}
     volume: 0.41
-    pitch: 1
+    pitch: 2.04
     source: {fileID: 0}
   - name: PlayerShoot
     clip: {fileID: 8300000, guid: 6ee72cb98baeb3a4ea2f48766d30c4e1, type: 3}
+    volume: 0.064
+    pitch: 0.1
+    source: {fileID: 0}
+  - name: PowerPickUp
+    clip: {fileID: 8300000, guid: 9cbcbe51d3c20dc46903ddd44f4aeb15, type: 3}
     volume: 0.138
-    pitch: 0.2
+    pitch: 2.02
+    source: {fileID: 0}
+  - name: Pause
+    clip: {fileID: 8300000, guid: a3c26a377d1d6164cb040dc18ecad7d6, type: 3}
+    volume: 0.099
+    pitch: 0.72
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 914e90e78e558a445977fa993ffa1dc1, type: 3}
+    volume: 0.099
+    pitch: 0.72
     source: {fileID: 0}
 --- !u!4 &1861214835
 Transform:
