@@ -18,6 +18,7 @@ public class PauseBehavior : MonoBehaviour
     {
         GamePaused = true;
         PauseScreen.SetActive(true);
+
     }
 
     //Resumes the game
@@ -25,6 +26,7 @@ public class PauseBehavior : MonoBehaviour
     {
         GamePaused = false;
         PauseScreen.SetActive(false);
+       
     }
     // Start is called before the first frame update
     void Start()
@@ -38,11 +40,13 @@ public class PauseBehavior : MonoBehaviour
         if (Input.GetButtonDown("Pause"))
         {
             GamePaused = !GamePaused;
+            FindObjectOfType<AudioManager>().Play("Pause");
         }
 
         if (GamePaused)
         {
             Time.timeScale = 0.000001f;
+            
         }
         else
         {
