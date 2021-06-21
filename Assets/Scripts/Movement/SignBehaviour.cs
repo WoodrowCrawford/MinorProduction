@@ -10,12 +10,14 @@ public class SignBehaviour : MonoBehaviour
     public Vector3 moveDirection;
     private GameManagerBehavior _gameManager;
     private int _tempScore;
+    private float _minSpeed = 0.25f;
+    private float _topSpeed = 0.5f;
 
     void Awake()
     {
         //Sets a refference to the GameManager
         _gameManager = GetComponent<GameManagerBehavior>();
-        speed = 0.1f;
+
         if (gameObject.CompareTag("Across"))
         {
             //Add 0.1f to the speed
@@ -48,21 +50,25 @@ public class SignBehaviour : MonoBehaviour
 
     void DifficultyCurve()
     {
+        //If the speed is at the topSpeed and goes across the stage
+        if (speed >= _topSpeed && gameObject.CompareTag("Across"))
+        {
+            //Speed is set to the lowest number possible (0.25f)
+            speed = _minSpeed;
+        }
+
         //If the score in GameManager is divisible by 25
         if ((GameManagerBehavior.score % 25 == 0) && _tempScore != GameManagerBehavior.score)
         {
+            if ((GameManagerBehavior.score % 150 == 0) && _tempScore != GameManagerBehavior.score)
+            {
+                _topSpeed += 0.05f;
+            }
             //Set the score to be the tempScore
             _tempScore = GameManagerBehavior.score;
 
-            //Add 0.1f to the speed
+            //Add 0.5f to the speed
             speed += 0.05f;
-
-            //If the speed is at the max (at 1) and goes across the stage
-            if (speed == 1 && gameObject.CompareTag("Across"))
-            {
-                //Speed is set to the lowest number possible (0.25f)
-                speed = 0.25f;
-            }
         }
     }
 }
