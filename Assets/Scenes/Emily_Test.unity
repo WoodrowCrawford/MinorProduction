@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poseidon_SkeletalMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 5970717149761542248, guid: 52e7809a1f99fec40b6f7b3f2f32da4a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c6eced2b94f6ba43a8991006214bcaf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e7809a1f99fec40b6f7b3f2f32da4a, type: 3}
 --- !u!1 &1474892461
@@ -275,13 +280,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474892461}
-  m_LocalRotation: {x: 0.94349754, y: -0.05545008, z: 0.25280938, w: 0.20694256}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.27978632, y: -0.4247263, z: 0.774719, w: 0.37568307}
+  m_LocalPosition: {x: 0.172, y: 4.148, z: -0.983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 155.258, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 119.737, y: -166.66699, z: -43.977997}
 --- !u!1 &1592653144
 GameObject:
   m_ObjectHideFlags: 0
