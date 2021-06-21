@@ -26,12 +26,12 @@ public class WaveBehavior : MonoBehaviour
         }
     }
 
-
     //Sets the wave value to equal 1
     public void RestartWave()
     {
         Wave = 1;
     }
+
     //Makes the wave value go up according to the value given
     public void SetWave(int value)
     {
@@ -50,5 +50,4 @@ public class WaveBehavior : MonoBehaviour
         //Shows "Wave: #" on the screen
         //waveText.text = "Wave: " + wave;
     }
-
 }

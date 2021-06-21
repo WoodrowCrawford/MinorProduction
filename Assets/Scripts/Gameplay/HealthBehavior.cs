@@ -97,7 +97,6 @@ public class HealthBehavior : MonoBehaviour
                 {
                     GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
                     Destroy(SpawnedRef, _despawnTimer);
-
                 }
 
                 else if (RandomChance >= 4 && RandomChance <= 5)
