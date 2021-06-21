@@ -107,6 +107,7 @@ public class HealthBehavior : MonoBehaviour
 
                 //Test
                 GameManagerBehavior.score++;
+                FindObjectOfType<AudioManager>().Play("EnemyDeath");
             }
 
             if (CompareTag("Player"))
@@ -115,5 +116,5 @@ public class HealthBehavior : MonoBehaviour
             }
         }
     }
-}
-
+}
+

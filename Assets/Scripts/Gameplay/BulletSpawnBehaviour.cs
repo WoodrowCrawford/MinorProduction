@@ -33,6 +33,7 @@ public class BulletSpawnBehaviour : MonoBehaviour
         {
             Instantiate(_bullet, _barrel.position, _barrel.rotation);
             _bullet.GetComponent<BulletBehaviour>().Owner = _owner;
+            FindObjectOfType<AudioManager>().Play("PlayerShoot");
         }
     }
 }
