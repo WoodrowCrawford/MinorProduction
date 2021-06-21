@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 11891672}
   m_Layer: 0
   m_Name: Sign (Down) 4
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 120308077}
   m_Layer: 0
   m_Name: Sign 3 (Across) FINAL
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 382650410}
   m_Layer: 0
   m_Name: Sign (Down) 3
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2879,7 +2879,7 @@ GameObject:
   - component: {fileID: 521119779}
   m_Layer: 0
   m_Name: Sign 3 (Across) 3
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3170,7 +3170,7 @@ GameObject:
   - component: {fileID: 597921107}
   m_Layer: 0
   m_Name: Sign 3 (Across) 5
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3437,7 +3437,7 @@ GameObject:
   - component: {fileID: 726510472}
   m_Layer: 0
   m_Name: Sign 3 (Across) 8
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4130,7 +4130,7 @@ GameObject:
   - component: {fileID: 852248155}
   m_Layer: 0
   m_Name: Sign (Down) 6
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4332,7 +4332,7 @@ GameObject:
   - component: {fileID: 861819799}
   m_Layer: 0
   m_Name: Sign (Down) 2
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5107,7 +5107,7 @@ GameObject:
   - component: {fileID: 949169434}
   m_Layer: 0
   m_Name: Sign 3 (Across) 10
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5525,7 +5525,7 @@ GameObject:
   - component: {fileID: 1021192094}
   m_Layer: 0
   m_Name: Sign (Down) 10
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6001,7 +6001,7 @@ GameObject:
   - component: {fileID: 1080958727}
   m_Layer: 0
   m_Name: Sign (Down) 7
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6646,7 +6646,7 @@ GameObject:
   - component: {fileID: 1216681643}
   m_Layer: 0
   m_Name: Sign 3 (Across) 6
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7016,7 +7016,7 @@ GameObject:
   - component: {fileID: 1303210049}
   m_Layer: 0
   m_Name: Sign (Down) 5
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8211,7 +8211,7 @@ GameObject:
   - component: {fileID: 1520367056}
   m_Layer: 0
   m_Name: Sign (Down) 8
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8653,8 +8653,8 @@ GameObject:
   - component: {fileID: 1671979595}
   - component: {fileID: 1671979594}
   m_Layer: 0
-  m_Name: Sign (START)
-  m_TagString: Untagged
+  m_Name: Sign (Across) START
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8762,7 +8762,7 @@ GameObject:
   - component: {fileID: 1672651377}
   m_Layer: 0
   m_Name: Sign 3 (Across) 4
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9205,7 +9205,7 @@ GameObject:
   - component: {fileID: 1718158519}
   m_Layer: 0
   m_Name: Sign (Down)
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9924,7 +9924,7 @@ GameObject:
   - component: {fileID: 1847090927}
   m_Layer: 0
   m_Name: Sign 3 (Across) 9
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10149,7 +10149,7 @@ GameObject:
   - component: {fileID: 1926631997}
   m_Layer: 0
   m_Name: Sign 3 (Across) 7
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11028,7 +11028,7 @@ GameObject:
   - component: {fileID: 2052801102}
   m_Layer: 0
   m_Name: Sign (Down) 9
-  m_TagString: Untagged
+  m_TagString: Down
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11410,7 +11410,7 @@ GameObject:
   - component: {fileID: 2121311231}
   m_Layer: 0
   m_Name: Sign (Across) 2
-  m_TagString: Untagged
+  m_TagString: Across
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

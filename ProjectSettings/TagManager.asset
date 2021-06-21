@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameOverScreen
   - Enemy
+  - Across
+  - Down
   layers:
   - Default
   - TransparentFX
