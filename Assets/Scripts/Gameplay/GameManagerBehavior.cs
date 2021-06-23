@@ -48,7 +48,6 @@ public class GameManagerBehavior : MonoBehaviour
         {
             return _gameOver;
         }
-        
     }
 
     //What happens when the player clicks start on the main menu
@@ -108,6 +107,5 @@ public class GameManagerBehavior : MonoBehaviour
         }
 
         _gameOverScreen.SetActive(_gameOver);
-        
     }
 }
