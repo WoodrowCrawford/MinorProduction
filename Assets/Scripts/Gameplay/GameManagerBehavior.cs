@@ -21,6 +21,11 @@ public class GameManagerBehavior : MonoBehaviour
     private GameObject _gameOverScreen;
 
 
+    //The easter egg screen
+    [SerializeField]
+    private GameObject _easterEggScreen;
+
+
     //Gets a reference of the player health for the game manager
     [SerializeField]
     private HealthBehavior _playerHealth;
@@ -66,6 +71,18 @@ public class GameManagerBehavior : MonoBehaviour
         wave = 1;
     }
 
+    //Shows the player how to play the game
+    public void HowToPlay()
+    {
+        SceneManager.LoadScene("HowToPlayScreen");
+    }
+
+    //Goes back to the main menu 
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     //What happens when the game quits
     public void QuitGame()
     {
@@ -107,5 +124,12 @@ public class GameManagerBehavior : MonoBehaviour
         }
 
         _gameOverScreen.SetActive(_gameOver);
+
+
+
+        if (score >= 100)
+        {
+            _easterEggScreen.SetActive(_easterEggScreen);
+        }
     }
 }
