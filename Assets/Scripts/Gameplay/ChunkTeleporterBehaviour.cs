@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunkTeleporterMovement : MonoBehaviour
+public class ChunkTeleporterBehaviour : MonoBehaviour
 {
     [Tooltip("The position the chunks will be teleported to")]
     [SerializeField]

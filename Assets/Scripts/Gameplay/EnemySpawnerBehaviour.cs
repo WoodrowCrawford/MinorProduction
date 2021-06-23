@@ -65,8 +65,6 @@ public class EnemySpawnerBehaviour : MonoBehaviour
                 {
                     //Spawns boss wave
                     GameObject spawnBoss = Instantiate(_bossEnemy, transform.position, new Quaternion());
-
-
                 }
             }
 
@@ -79,9 +77,6 @@ public class EnemySpawnerBehaviour : MonoBehaviour
                     GameObject spawnEnemy = Instantiate(_enemy, transform.position, new Quaternion());
                     //Prevents enemies from spawning until the timer is up
                     yield return new WaitForSeconds(_spawnTimer);
-
-
-
                 }
 
             }

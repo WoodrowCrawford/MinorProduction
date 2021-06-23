@@ -48,7 +48,6 @@ public class GameManagerBehavior : MonoBehaviour
         {
             return _gameOver;
         }
-        
     }
 
     //What happens when the player clicks start on the main menu
@@ -75,6 +74,8 @@ public class GameManagerBehavior : MonoBehaviour
 
     private void Start()
     {
+        _gameOver = false;
+
         //Sets the score to be equal to zero when the game is started
         score = 0;
 
@@ -100,9 +101,11 @@ public class GameManagerBehavior : MonoBehaviour
             wave++;
         }
       
-        _gameOver = _playerHealth.Health <= 0;
+        if (_playerHealth.Health <= 0)
+        {
+            _gameOver = true;
+        }
 
         _gameOverScreen.SetActive(_gameOver);
-        
     }
 }

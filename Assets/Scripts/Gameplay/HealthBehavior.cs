@@ -64,6 +64,14 @@ public class HealthBehavior : MonoBehaviour
             Health = 3;
     }
 
+    private void PowerUpLostOnDeath()
+    {
+        RapidOnDeath.isActive = false;
+        SpreadShotOnDeath.isActive = false;
+
+        RapidOnDeath.PowerUpTimer = 1;
+        SpreadShotOnDeath.PowerUpTimer = 1;
+    }
 
     public void Awake()
     {
@@ -89,7 +97,6 @@ public class HealthBehavior : MonoBehaviour
                 {
                     GameObject SpawnedRef = Instantiate(_spreadShotRef, transform.position, transform.rotation);
                     Destroy(SpawnedRef, _despawnTimer);
-
                 }
 
                 else if (RandomChance >= 4 && RandomChance <= 5)
@@ -100,8 +107,14 @@ public class HealthBehavior : MonoBehaviour
 
                 //Test
                 GameManagerBehavior.score++;
+                FindObjectOfType<AudioManager>().Play("EnemyDeath");
+            }
+
+            if (CompareTag("Player"))
+            {
+                PowerUpLostOnDeath();
             }
         }
     }
-}
-
+}
+
