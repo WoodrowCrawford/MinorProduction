@@ -64,6 +64,8 @@ public class HealthBehavior : MonoBehaviour
             Health = 3;
     }
 
+    // A function that makes sure that the player doesnt keep any power up
+    // on death and they restart the game!
     private void PowerUpLostOnDeath()
     {
         RapidOnDeath.isActive = false;
@@ -109,7 +111,8 @@ public class HealthBehavior : MonoBehaviour
                 GameManagerBehavior.score++;
                 FindObjectOfType<AudioManager>().Play("EnemyDeath");
             }
-
+            // If the player dies, doesnt drop power up
+            // and loses the power-ups that were gained
             if (CompareTag("Player"))
             {
                 PowerUpLostOnDeath();
