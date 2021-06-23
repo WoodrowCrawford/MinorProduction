@@ -20,6 +20,11 @@ public class BulletSpawnBehaviour : MonoBehaviour
     [SerializeField]
     private float _despawnTime;
 
+    private void Awake()
+    {
+        _bullet.GetComponent<BulletBehaviour>().Owner = _owner;
+    }
+
     //Shoots a bullet when called
     public void Shoot()
     {
