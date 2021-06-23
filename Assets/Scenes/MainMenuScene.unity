@@ -443,8 +443,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 0}
   _playerHealth: {fileID: 0}
-  _score: {fileID: 0}
-  _wave: {fileID: 0}
   _enemyHealth: {fileID: 0}
 --- !u!4 &1158651268
 Transform:

@@ -21,7 +21,6 @@ public class HealthBarBehavior : MonoBehaviour
         _slider = GetComponent<Slider>();
         _slider.maxValue = _health.Health;
         _fill.color = _HealthGradient.Evaluate(1f);
-
     }
 
     // Update is called once per frame

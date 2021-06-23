@@ -14,6 +14,8 @@ public class RapidFireCollectBehavior : MonoBehaviour
         {
             RapidFirePowerUp.isActive = true;
             Destroy(gameObject);
+
+            FindObjectOfType<AudioManager>().Play("PowerPickUp");
         }
     }
 }
