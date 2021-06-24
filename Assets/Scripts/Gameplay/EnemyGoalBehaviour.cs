@@ -18,6 +18,8 @@ public class EnemyGoalBehaviour : MonoBehaviour
             Destroy(other.gameObject);
             //Tell the player to takeDamage
             _playerHealth.TakeDamage(1);
+
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
     }
 }
