@@ -85,9 +85,11 @@ public class InputDelegatesBehavior : MonoBehaviour
             // Waits for the player to shoot before restarting the timer
             if (Mouse.current.leftButton.isPressed || Keyboard.current.spaceKey.isPressed)
             {
-                animator.SetTrigger("Shooting");
+              
                 _barrel1.Shoot();
                 _playerShootcooldown = _startingTimer;
+
+                animator.SetTrigger("Shooting");
 
                 // Once the Spreadshot is collected the other two barrels are activated and can shoot!
                 if (MultiShot.isActive)
