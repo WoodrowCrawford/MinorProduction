@@ -442,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 0}
+  _easterEggScreen: {fileID: 0}
   _playerHealth: {fileID: 0}
   _enemyHealth: {fileID: 0}
 --- !u!4 &1158651268
