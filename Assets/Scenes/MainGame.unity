@@ -1291,7 +1291,7 @@ Transform:
   m_Children:
   - {fileID: 1588767684}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &184427340
 PrefabInstance:
@@ -4587,6 +4587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Poseidon_SkeletalMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 52e7809a1f99fec40b6f7b3f2f32da4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5970717149761542248, guid: 52e7809a1f99fec40b6f7b3f2f32da4a,
         type: 3}
