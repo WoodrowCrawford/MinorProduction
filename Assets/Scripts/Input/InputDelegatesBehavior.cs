@@ -40,6 +40,9 @@ public class InputDelegatesBehavior : MonoBehaviour
 
     private PlayerMovementBehavior _movement;
 
+    [SerializeField]
+    private Animator animator;
+
     public void Awake()
     {
         _controls = new PlayerControls();
@@ -76,11 +79,13 @@ public class InputDelegatesBehavior : MonoBehaviour
         // If the cooldown is 0 then the player is allowed to shoot
        if(_playerShootcooldown <= 0)
        {
+            
             _controls.Player.Shoot.Enable();
 
             // Waits for the player to shoot before restarting the timer
             if (Mouse.current.leftButton.isPressed || Keyboard.current.spaceKey.isPressed)
             {
+                animator.SetTrigger("Shooting");
                 _barrel1.Shoot();
                 _playerShootcooldown = _startingTimer;
 
