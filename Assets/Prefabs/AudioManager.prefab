@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5376813932944212130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5376813932944212128}
+  - component: {fileID: 5376813932944212129}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5376813932944212128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376813932944212130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.2071207, y: 19.382431, z: -114.86541}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5376813932944212129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376813932944212130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e70a2c494c3d743a42714424c829bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerHurt
+    clip: {fileID: 8300000, guid: 686896a105297d749b4cd56d3c75cf3a, type: 3}
+    volume: 0.41
+    pitch: 2.04
+    source: {fileID: 0}
+  - name: PlayerShoot
+    clip: {fileID: 8300000, guid: 6ee72cb98baeb3a4ea2f48766d30c4e1, type: 3}
+    volume: 0.064
+    pitch: 0.1
+    source: {fileID: 0}
+  - name: PowerPickUp
+    clip: {fileID: 8300000, guid: 9cbcbe51d3c20dc46903ddd44f4aeb15, type: 3}
+    volume: 0.138
+    pitch: 2.02
+    source: {fileID: 0}
+  - name: Pause
+    clip: {fileID: 8300000, guid: a3c26a377d1d6164cb040dc18ecad7d6, type: 3}
+    volume: 0.099
+    pitch: 0.72
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 914e90e78e558a445977fa993ffa1dc1, type: 3}
+    volume: 0.099
+    pitch: 0.72
+    source: {fileID: 0}
