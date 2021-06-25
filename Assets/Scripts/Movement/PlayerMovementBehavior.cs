@@ -9,6 +9,15 @@ public class PlayerMovementBehavior : MonoBehaviour
 
     private Vector3 _velocity;
 
+    public Vector3 Velocity
+    {
+        get
+        {
+            return _velocity;
+        }
+        
+    }
+
     [Tooltip("The speed in which the player is moving around at")]
     [SerializeField]
     private float speed;
