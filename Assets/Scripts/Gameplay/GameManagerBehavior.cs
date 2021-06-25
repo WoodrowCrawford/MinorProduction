@@ -91,6 +91,8 @@ public class GameManagerBehavior : MonoBehaviour
 
     private void Start()
     {
+       
+
         _gameOver = false;
 
         //Sets the score to be equal to zero when the game is started
@@ -101,6 +103,7 @@ public class GameManagerBehavior : MonoBehaviour
 
         //Sets the current wave to be 1
         wave = 1;
+        FindObjectOfType<AudioManager>().Play("GameTheme");
     }
 
     //Update is called once per frame
@@ -131,5 +134,7 @@ public class GameManagerBehavior : MonoBehaviour
         {
             _easterEggScreen.SetActive(_easterEggScreen);
         }
+
+
     }
 }
